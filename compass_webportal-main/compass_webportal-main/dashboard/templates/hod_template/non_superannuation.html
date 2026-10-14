@@ -1,0 +1,185 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+Non-Superannuation Details Template
+{% endblock page_title %}
+
+{% block main_content %}
+{% load static %}
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Dropdowns for filtering -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="contract-filter">Filter by Contract ID:</label>
+                    <select id="contract-filter" class="form-control">
+                        <option value="">Select Contract ID</option>
+                        {% for contract_id in unique_contract_ids %}
+                            <option value="{{ contract_id }}">{{ contract_id }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="statement-filter">Filter by Statement Reference:</label>
+                    <select id="statement-filter" class="form-control">
+                        <option value="">Select Statement Reference</option>
+                        {% for statement_ref in unique_statement_references %}
+                            <option value="{{ statement_ref }}">{{ statement_ref }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>&nbsp;</label>
+                    <button id="fetch-data-btn" class="btn btn-primary">Fetch Data</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Table to display Non-Superannuable Deductions Details -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Non-Superannuable Deductions Details</h3>
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap" id="non-superannuable-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Contract ID</th>
+                                    <th>Statement Reference</th>
+                                    <th>Performer ID</th>
+                                    <th>Performer Name</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="non-superannuable-table-body">
+                                <!-- Table rows will be dynamically populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Amount Tile -->
+        <div id="total-amount-tile" class="card" style="position: fixed; top: 100px; right: 20px; padding: 10px;">
+            Total Amount: 0
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contractFilter = document.getElementById('contract-filter');
+        const statementFilter = document.getElementById('statement-filter');
+        const fetchDataButton = document.getElementById('fetch-data-btn');
+        const nonSuperannuableTableBody = document.getElementById('non-superannuable-table-body');
+        const totalAmountTile = document.getElementById('total-amount-tile');
+    
+        // Function to fetch and display rows based on selected filters
+        function fetchAndDisplayRows() {
+            const contractId = contractFilter.value;
+            const statementRef = statementFilter.value;
+    
+            if (!contractId || !statementRef) {
+                console.error('Contract ID or Statement Reference is missing.');
+                return;
+            }
+    
+            // Clear existing table rows
+            nonSuperannuableTableBody.innerHTML = '';
+    
+            // Fetch data based on selected filters
+            fetch(`/non_superannuation_details_api/?contract_id=${contractId}&statement_reference=${statementRef}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Append new rows with filtered data
+                    data.data.forEach(item => {
+                        const row = `
+                            <tr>
+                                <td>${item.id}</td>
+                                <td>${item.Contract_ID}</td>
+                                <td>${item.Statement_Reference}</td>
+                                <td>${item.Performer_ID}</td>
+                                <td>${item.Performer_Name}</td>
+                                <td>${item.Amount}</td>
+                            </tr>
+                        `;
+                        nonSuperannuableTableBody.insertAdjacentHTML('beforeend', row);
+                    });
+                    var total = parseFloat(data.total_amount_sum).toFixed(2);
+                    console.log(`returned total sum is ${total}`);
+                    // Calculate and update total amount
+                    totalAmountTile.textContent = `Total Amount: ${total}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+    
+        // Event listener for fetch button click
+        fetchDataButton.addEventListener('click', function() {
+            const selectedContractId = contractFilter.value;
+            const selectedStatementRef = statementFilter.value;
+    
+            // Check if both filters are selected
+            if (selectedContractId && selectedStatementRef) {
+                fetchAndDisplayRows();
+            } else {
+                // Show error message if both filters are not selected
+                alert('Please select both Contract ID and Statement Reference.');
+            }
+        });
+    
+        // Initial fetch to populate dropdowns
+        fetch('/non_superannuation_details_api/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Populate Contract ID dropdown
+                contractFilter.innerHTML = '<option value="">Select Contract ID</option>';
+                data.contract_ids.forEach(value => {
+                    const option = document.createElement('option');
+                    option.textContent = value;
+                    option.value = value;
+                    contractFilter.appendChild(option);
+                });
+    
+                // Populate Statement Reference dropdown
+                statementFilter.innerHTML = '<option value="">Select Statement Reference</option>';
+                data.statement_references.forEach(value => {
+                    const option = document.createElement('option');
+                    option.textContent = value;
+                    option.value = value;
+                    statementFilter.appendChild(option);
+                });
+    
+                // Calculate and update total amount initially
+               
+                totalAmountTile.textContent = `Total Amount: ${data.total_amount_sum.toFixed(2)}`;
+            })
+            .catch(error => {
+                console.error('Error fetching unique values:', error);
+            });
+    });
+</script>
+
+{% endblock main_content %}

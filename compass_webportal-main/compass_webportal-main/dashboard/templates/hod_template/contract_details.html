@@ -1,0 +1,42 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+Contract Details Template
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h3 class="card-title">Contract Details</h3>
+                    <!-- Add Contract Button -->
+                    <div class="card-tools">
+                        <a href="{% url 'add_contract' %}" class="btn btn-primary"> + Add Contract</a>
+                    </div>
+                    <!-- End Add Contract Button -->
+                </div>
+            </div>
+            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Contract ID</th>
+                            <th>Compass Credential ID</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contract-details-table">
+                        <!-- Contract details rows will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+{% endblock main_content %}

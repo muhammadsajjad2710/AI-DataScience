@@ -1,0 +1,18 @@
+# Python Dependencies for MedicalNotes
+# Install with: pip install -r requirements.txt
+
+# Core AI Libraries
+openai==1.12.0
+assemblyai==0.20.0
+google-generativeai==0.3.2
+
+# Image Processing
+Pillow==10.2.0
+
+# Utilities
+python-dotenv==1.0.0
+requests==2.31.0
+
+# Optional but recommended
+numpy==1.24.3
+python-json-logger==2.0.7

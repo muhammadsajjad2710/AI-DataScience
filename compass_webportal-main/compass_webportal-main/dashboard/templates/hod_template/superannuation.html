@@ -1,0 +1,108 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+Superannuation Details Template
+{% endblock page_title %}
+
+{% block main_content %}
+{% load static %}
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Dropdowns for Contract ID and Statement Reference -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="select-contract-id">Filter by Contract ID:</label>
+                    <select class="form-control" id="select-contract-id">
+                        <option value="">Select Contract ID:</option>
+                        {% for contract in contract_ids %}
+                            <option value="{{ contract }}">{{ contract }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="select-statement-ref">Filter by Statement Reference:</label>
+                    <select class="form-control" id="select-statement-ref">
+                        <option value="">Select Statement Reference:</option>
+                        {% for reference in statement_references %}
+                            <option value="{{ reference }}">{{ reference }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary mt-4" onclick="fetchSuperannuationData()">Fetch Data</button>
+            </div>
+        </div>
+
+        <!-- Display Table for Superannuation Details -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Superannuation Details</h3>
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Contract ID</th>
+                                    <th>Statement Reference</th>
+                                    <th>Performer ID</th>
+                                    <th>Name</th>
+                                    <th>Percentage</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="superannuation-data">
+                                <!-- Superannuation data will be loaded dynamically here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<script>
+    function fetchSuperannuationData() {
+        var contractId = document.getElementById("select-contract-id").value;
+        var statementRef = document.getElementById("select-statement-ref").value;
+
+        fetch(`/superannuation_details_api/?contract_id=${contractId}&statement_reference=${statementRef}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                var tableBody = document.getElementById("superannuation-data");
+                tableBody.innerHTML = "";
+
+                data.forEach(item => {
+                    var row = `<tr>
+                        <td>${item.id}</td>
+                        <td>${item.contract_id}</td>
+                        <td>${item.statement_reference}</td>
+                        <td>${item.performer_id}</td>
+                        <td>${item.name}</td>
+                        <td>${item.percentage}</td>
+                        <td>${item.amount}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                // Handle error (e.g., display error message to user)
+            });
+    }
+</script>
+
+{% endblock main_content %}

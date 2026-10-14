@@ -1,0 +1,176 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+Yearly UDA Target Plot
+{% endblock page_title %}
+
+{% block main_content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    .tile {
+        color: white;
+        max-width: 500px; 
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        flex: 1;
+    }
+
+    .tile-heading {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .tile-value {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .tile-target {
+        background-color: #4CAF50;
+    }
+
+    .tile-units-sum {
+        background-color: #FF5722;
+    }
+
+    .tile-remaining {
+        background-color: #FF9800; /* Or any color you prefer */
+    }
+
+    #tilesRow {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="contractIdDropdown">Select Contract ID:</label>
+                <select id="contractIdDropdown" class="form-control">
+                    {% for contract_id in contract_ids %}
+                    <option value="{{ contract_id }}" {% if contract_id == selected_contract_id %}selected{% endif %}>
+                        {{ contract_id }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="row" id="tilesRow">
+                <div id="targetUdasTile" class="col-md-3 col-sm-12 tile tile-target">
+                    <h2 class="tile-heading">Target UDAs</h2>
+                    <p class="tile-value">{{ target_udas }}</p>
+                </div>
+                <div id="unitsSumTile" class="col-md-3 col-sm-12 tile tile-units-sum">
+                    <h2 class="tile-heading">UDAs Completed</h2>
+                    <p class="tile-value">0</p>
+                </div>
+                <div id="remainingUdasTile" class="col-md-3 col-sm-12 tile tile-remaining">
+                    <h2 class="tile-heading">Remaining UDAs</h2>
+                    <p class="tile-value">{{ remaining_udas }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <canvas id="yearlyChart" style="width: 100%; height: 400px;"></canvas>
+        </div>
+    </div>
+</div>
+
+<script>
+    var initialCalculatedData = {{ calculated_data_json|safe }};
+    var myChart = null;
+
+    function getCSRFToken() {
+        return document.querySelector('[name=csrfmiddlewaretoken]').value;
+    }
+
+    function updateTiles(data) {
+        var target_udas = data.yearly_data.target_udas || 0;
+        var sumOfUnits = data.total_units || 0;
+        var remainingUdas = data.remaining_udas || 0;
+
+        document.getElementById('targetUdasTile').innerHTML = `<h2 class="tile-heading">Target UDAs</h2><p class="tile-value">${target_udas}</p>`;
+        document.getElementById('unitsSumTile').innerHTML = `<h2 class="tile-heading">UDAs Completed</h2><p class="tile-value">${sumOfUnits}</p>`;
+        document.getElementById('remainingUdasTile').innerHTML = `<h2 class="tile-heading">Remaining UDAs</h2><p class="tile-value">${remainingUdas}</p>`;
+    }
+
+    function renderChart(data) {
+        var ctx = document.getElementById('yearlyChart').getContext('2d');
+        if (myChart) {
+            myChart.destroy();
+        }
+
+        // Use the yearly data for the chart
+        var labels = data.yearly_data.labels;
+        var chartData = data.yearly_data.data_uda_target_curve;
+
+        myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'UDA Target Curve',
+                    data: chartData,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: true, // This enables filling the area under the curve
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)', // Slightly transparent fill color
+                    type: 'line'
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Total UDAs'
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function fetchData(contractId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "{% url 'dashboard_yearly' %}");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xhr.setRequestHeader("X-CSRFToken", getCSRFToken());
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                updateTiles(response);  // Ensure this function handles remaining_udas
+                renderChart(response);
+            }
+        };
+        xhr.send(`contract_id=${contractId}`);
+    }
+
+    document.getElementById('contractIdDropdown').addEventListener('change', function() {
+        var selectedContractId = this.value;
+        fetchData(selectedContractId);
+    });
+
+    // Initial update
+    updateTiles(initialCalculatedData);
+    renderChart(initialCalculatedData);
+</script>
+
+<!-- Include CSRF token
+
+
+<!-- Include CSRF token -->
+<form method="post" style="display:none;">
+    {% csrf_token %}
+</form>
+
+{% endblock main_content %}

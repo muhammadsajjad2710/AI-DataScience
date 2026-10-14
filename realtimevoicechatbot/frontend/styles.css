@@ -1,0 +1,18 @@
+:root { --bg:#0e1013; --card:#151922; --text:#e7eaf0; --muted:#a7b0c0; --acc:#4f8cff; }
+*{ box-sizing:border-box }
+html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui,Segoe UI,Roboto,Inter,sans-serif }
+.container{ max-width:960px; margin:0 auto; padding:24px }
+.card{ background:var(--card); border:1px solid #222735; border-radius:12px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,.25) }
+h1,h2{ margin:0 0 12px 0 }
+input,button,select,textarea{ background:#0f131b; color:var(--text); border:1px solid #293042; border-radius:8px; padding:10px 12px }
+button{ cursor:pointer; background:var(--acc); border-color:transparent }
+button.secondary{ background:#222a3a }
+.row{ display:flex; gap:12px; flex-wrap:wrap }
+.row > *{ flex:1 1 240px }
+.notes-grid{ display:grid; gap:12px; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)) }
+.note{ padding:12px; background:#0f131b; border:1px solid #242b3b; border-radius:8px; white-space:pre-wrap; word-break:break-word }
+.muted{ color:var(--muted) }
+.spacer{ height:16px }
+.hidden{ display:none }
+
+

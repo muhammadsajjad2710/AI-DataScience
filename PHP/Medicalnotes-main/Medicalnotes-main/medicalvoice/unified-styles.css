@@ -1,0 +1,435 @@
+/* ===== MEDICALVOICE UNIFIED STYLES ===== */
+/* This file ensures MedicalVoice uses the same design system as the main project */
+
+/* Import the main design system first */
+@import url('../design-system.css');
+
+/* ===== OVERRIDE INCONSISTENT BUTTON STYLES ===== */
+/* Ensure all buttons use the unified design system */
+
+/* Base Button Style - Using exact design-system.css values */
+.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--space-2) !important;
+    padding: var(--space-3) var(--space-6) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: var(--text-sm) !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+    border-radius: var(--radius-lg) !important;
+    border: 1px solid transparent !important;
+    cursor: pointer !important;
+    transition: all var(--transition-normal) !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-align: center !important;
+}
+
+/* Primary Button - Using exact design-system.css values */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600)) !important;
+    color: white !important;
+    border-color: var(--primary-600) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-600), var(--primary-700)) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    color: white !important;
+}
+
+.btn-primary:active {
+    transform: translateY(0) !important;
+}
+
+.btn-primary:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Secondary Button - Using exact design-system.css values */
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary-500), var(--secondary-600)) !important;
+    color: white !important;
+    border-color: var(--secondary-600) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, var(--secondary-600), var(--secondary-700)) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    color: white !important;
+}
+
+/* Success Button - Using exact accent colors from design-system.css */
+.btn-success, .btn-accent {
+    background: linear-gradient(135deg, var(--accent-500), var(--accent-600)) !important;
+    color: white !important;
+    border-color: var(--accent-600) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-success:hover, .btn-accent:hover {
+    background: linear-gradient(135deg, var(--accent-600), var(--accent-700)) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    color: white !important;
+}
+
+/* Danger Button - Using exact error colors from design-system.css */
+.btn-danger {
+    background: linear-gradient(135deg, var(--error-500), var(--error-600)) !important;
+    color: white !important;
+    border-color: var(--error-600) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, var(--error-600), var(--error-700)) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-lg) !important;
+    color: white !important;
+}
+
+/* Ghost Button - Transparent with Border */
+.btn-ghost {
+    background: transparent !important;
+    color: var(--neutral-700) !important;
+    border-color: var(--neutral-300) !important;
+}
+
+.btn-ghost:hover {
+    background: var(--neutral-50) !important;
+    border-color: var(--neutral-400) !important;
+    color: var(--neutral-900) !important;
+}
+
+/* Outline Buttons - Transparent with Colored Border */
+.btn-outline-primary {
+    background: transparent !important;
+    color: #2563EB !important;
+    border: 2px solid #93C5FD !important;
+    font-weight: 600 !important;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-outline-primary:hover {
+    background: #EFF6FF !important;
+    border-color: #3B82F6 !important;
+    color: #1D4ED8 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.btn-outline-secondary {
+    background: transparent !important;
+    color: #7C3AED !important;
+    border: 2px solid #C4B5FD !important;
+    font-weight: 600 !important;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-outline-secondary:hover {
+    background: #F5F3FF !important;
+    border-color: #8B5CF6 !important;
+    color: #6D28D9 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Light Button - For Secondary Actions */
+.btn-light {
+    background: var(--neutral-100) !important;
+    color: var(--neutral-700) !important;
+    border-color: var(--neutral-200) !important;
+}
+
+.btn-light:hover {
+    background: var(--neutral-200) !important;
+    border-color: var(--neutral-300) !important;
+    color: var(--neutral-900) !important;
+}
+
+/* Button Sizes - Consistent with Design System */
+.btn-sm {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    border-radius: 6px !important;
+    font-weight: 500 !important;
+}
+
+.btn-lg {
+    padding: 12px 32px !important;
+    font-size: 16px !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+
+.btn-xl {
+    padding: var(--space-5) var(--space-10) !important;
+    font-size: var(--text-lg) !important;
+    border-radius: var(--radius-xl) !important;
+}
+
+/* Button with Icons - Ensure Proper Spacing */
+.btn .material-icons-round {
+    font-size: 18px !important;
+    vertical-align: middle !important;
+}
+
+.btn-sm .material-icons-round {
+    font-size: 16px !important;
+}
+
+.btn-lg .material-icons-round {
+    font-size: 20px !important;
+}
+
+/* Button Ripple Effect */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+    pointer-events: none;
+}
+
+.btn:active::after {
+    width: 300px;
+    height: 300px;
+    transition: width 0.1s ease-out, height 0.1s ease-out;
+}
+
+/* Special Buttons for MedicalVoice */
+
+/* Record Button - Primary Style with Pulse Animation */
+.record-btn {
+    background: linear-gradient(135deg, #3B82F6, #2563EB) !important;
+    color: white !important;
+    border-color: #2563EB !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+    font-weight: 600 !important;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+.record-btn:hover {
+    background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    animation: none;
+}
+
+/* Process/Upload Button States */
+.btn-process {
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600)) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-process::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-process:hover::before {
+    left: 100%;
+}
+
+/* Loading State for Buttons */
+.btn.loading {
+    pointer-events: none !important;
+    position: relative !important;
+    color: transparent !important;
+}
+
+.btn.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Full Width Buttons for Mobile */
+.btn-block,
+.btn-full {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* Button Group Styling */
+.button-group {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Action Buttons Container */
+.action-buttons {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    padding: var(--space-6);
+    background: var(--neutral-50);
+    border-top: 1px solid var(--neutral-200);
+    flex-wrap: wrap;
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-xl);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    z-index: 1000;
+}
+
+.fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+}
+
+.fab .material-icons-round {
+    font-size: 24px;
+}
+
+/* Quick Fix for Common Button Issues */
+button.btn,
+a.btn,
+input[type="button"].btn,
+input[type="submit"].btn {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    text-align: center !important;
+}
+
+/* Remove any conflicting styles */
+.btn:focus {
+    outline: 2px solid var(--primary-500) !important;
+    outline-offset: 2px !important;
+}
+
+/* Responsive Button Adjustments */
+@media (max-width: 768px) {
+    .btn {
+        padding: var(--space-3) var(--space-4) !important;
+        font-size: var(--text-base) !important;
+    }
+
+    .btn-lg {
+        padding: var(--space-4) var(--space-6) !important;
+    }
+
+    .button-group,
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button-group .btn,
+    .action-buttons .btn {
+        width: 100% !important;
+    }
+}
+
+/* Dark Mode Support (if implemented) */
+@media (prefers-color-scheme: dark) {
+    .btn-light {
+        background: var(--neutral-800) !important;
+        color: var(--neutral-200) !important;
+        border-color: var(--neutral-700) !important;
+    }
+
+    .btn-light:hover {
+        background: var(--neutral-700) !important;
+        color: var(--neutral-100) !important;
+        border-color: var(--neutral-600) !important;
+    }
+}
+
+/* Accessibility Improvements */
+.btn:focus-visible {
+    outline: 2px solid var(--primary-500) !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .btn {
+        border-width: 2px !important;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-success,
+    .btn-danger {
+        font-weight: 600 !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .btn {
+        display: none !important;
+    }
+}

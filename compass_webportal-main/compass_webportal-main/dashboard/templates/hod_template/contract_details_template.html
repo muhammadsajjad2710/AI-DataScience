@@ -1,0 +1,99 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+Contract Details Template
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+    <div class="container-fluid">
+
+        {% if messages %}
+        <div class="form-group">
+            <div class="col-12">
+                {% for message in messages %}
+                {% if message.tags == "error" %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% elif message.tags == "success" %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Contract Details</h3>
+                        
+
+                        <!-- Add Contract Button -->
+                        <div class="card-tools">
+                            <a href="{% url 'add_contract' %}" class="btn btn-primary"> + Add Contract</a>
+                        </div>
+                        <!-- End Add Contract Button -->
+
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Contract ID</th>
+                                    <th>Contract UDAs</th>
+                                    <th>Commissioner</th>
+                                    <th>Contract Type</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Action</th> 
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for contract in contracts %}
+                                <tr>
+                                    <td>{{ forloop.counter }}</td> <!-- Autoincrement ID starting from 1 -->
+                                    <td>{{ contract.Contract_ID }}</td>
+                                    <td>{{ contract.Contract_UDAs }}</td>
+                                    <td>{{ contract.Commissioner }}</td>
+                                    <td>{{ contract.ContractType }}</td>
+                                    <td>{{ contract.Start_Date }}</td>
+                                    <td>{{ contract.End_Date }}</td>
+                                    <td>  <!-- Added Action column with Edit and Delete buttons -->
+                                        <a href="{% url 'edit_contract' contract.id %}" class="btn btn-success">Edit</a>
+                                        <a href="{% url 'delete_contract' contract.id %}" class="btn btn-danger delete-contract" data-contract-id="{{ contract.id }}">Delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+            </div>
+        </div>
+
+    </div><!-- /.container-fluid -->
+</section>
+
+{% endblock main_content %}

@@ -1,0 +1,366 @@
+/* ===== MEDICALVOICE SPECIFIC OVERRIDES ===== */
+/* Additional styles to ensure 100% consistency with main project */
+
+/* Record Audio Section Divider */
+.record-audio-divider {
+    position: relative;
+    text-align: center;
+    margin: var(--space-6) 0;
+}
+
+.record-audio-divider::before,
+.record-audio-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: calc(50% - 40px);
+    height: 1px;
+    background: var(--neutral-300);
+}
+
+.record-audio-divider::before {
+    left: 0;
+}
+
+.record-audio-divider::after {
+    right: 0;
+}
+
+.record-audio-divider span {
+    background: var(--neutral-50);
+    padding: 0 var(--space-4);
+    color: var(--neutral-500);
+    font-weight: 500;
+    font-size: var(--text-sm);
+}
+
+/* Upload Area - Consistent with Main Project */
+.upload-area {
+    background: white !important;
+    border: 2px dashed var(--primary-300) !important;
+    border-radius: var(--radius-2xl) !important;
+    padding: var(--space-12) !important;
+    transition: all var(--transition-normal) !important;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    background: var(--primary-50) !important;
+    border-color: var(--primary-500) !important;
+    transform: scale(1.02);
+}
+
+.upload-area.dragover {
+    background: var(--primary-50) !important;
+    border-color: var(--primary-500) !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
+}
+
+.upload-icon {
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto var(--space-6) !important;
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600)) !important;
+    border-radius: var(--radius-full) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+}
+
+.upload-icon .material-icons-round {
+    font-size: 36px !important;
+}
+
+.upload-text {
+    font-size: var(--text-xl) !important;
+    font-weight: 600 !important;
+    color: var(--neutral-900) !important;
+    margin-bottom: var(--space-2) !important;
+}
+
+.upload-hint {
+    font-size: var(--text-sm) !important;
+    color: var(--neutral-500) !important;
+}
+
+/* Progress Bar Consistent Styling */
+.upload-progress {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--neutral-200);
+    margin-top: var(--space-6);
+}
+
+.progress-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+}
+
+.progress-title {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.progress-bar-container {
+    position: relative;
+    margin-bottom: var(--space-3);
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--neutral-200);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+    border-radius: var(--radius-full);
+    transition: width 0.3s ease;
+}
+
+.progress-percentage {
+    position: absolute;
+    right: 0;
+    top: -24px;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--primary-600);
+}
+
+.progress-message {
+    font-size: var(--text-sm);
+    color: var(--neutral-600);
+    text-align: center;
+}
+
+/* Result Cards Consistency */
+.result-card {
+    background: white !important;
+    border-radius: var(--radius-xl) !important;
+    border: 1px solid var(--neutral-200) !important;
+    box-shadow: var(--shadow-sm) !important;
+    overflow: hidden;
+    margin-bottom: var(--space-4);
+    transition: all var(--transition-normal);
+}
+
+.result-card:hover {
+    box-shadow: var(--shadow-md) !important;
+    transform: translateY(-2px);
+}
+
+/* Feature Cards Consistency */
+.feature-card {
+    background: white !important;
+    border-radius: var(--radius-xl) !important;
+    padding: var(--space-6) !important;
+    border: 1px solid var(--neutral-200) !important;
+    box-shadow: var(--shadow-sm) !important;
+    text-align: center;
+    transition: all var(--transition-normal);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg) !important;
+    border-color: var(--primary-200) !important;
+}
+
+.feature-icon {
+    width: 64px !important;
+    height: 64px !important;
+    margin: 0 auto var(--space-4) !important;
+    border-radius: var(--radius-xl) !important;
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600)) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+}
+
+.feature-icon .material-icons-round {
+    font-size: 28px !important;
+}
+
+.feature-title {
+    font-size: var(--text-xl) !important;
+    font-weight: 700 !important;
+    color: var(--neutral-900) !important;
+    margin-bottom: var(--space-3) !important;
+}
+
+.feature-description {
+    font-size: var(--text-base) !important;
+    color: var(--neutral-600) !important;
+    line-height: 1.6 !important;
+    margin-bottom: var(--space-4) !important;
+}
+
+.feature-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-sm);
+    color: var(--neutral-500);
+    font-weight: 500;
+}
+
+.meta-item .material-icons-round {
+    font-size: 16px;
+    color: var(--accent-500);
+}
+
+/* Credits Display Consistency */
+.credits-display {
+    background: white !important;
+    border-radius: var(--radius-2xl) !important;
+    padding: var(--space-8) !important;
+    text-align: center !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--neutral-200) !important;
+    margin-bottom: var(--space-8) !important;
+}
+
+.credits-number {
+    font-size: var(--text-5xl) !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, var(--primary-500), var(--secondary-500)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    margin-bottom: var(--space-2) !important;
+}
+
+.credits-label {
+    font-size: var(--text-lg) !important;
+    color: var(--neutral-600) !important;
+    margin-bottom: var(--space-4) !important;
+}
+
+/* Notification Styles */
+.notification {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--space-3) !important;
+    padding: var(--space-4) !important;
+    border-radius: var(--radius-lg) !important;
+    font-weight: 500 !important;
+    animation: slideInRight 0.3s ease-out !important;
+    border: 1px solid !important;
+    margin-bottom: var(--space-6) !important;
+}
+
+.notification-success {
+    background: var(--success-50) !important;
+    color: var(--success-700) !important;
+    border-color: var(--success-200) !important;
+}
+
+.notification-error {
+    background: var(--error-50) !important;
+    color: var(--error-700) !important;
+    border-color: var(--error-200) !important;
+}
+
+.notification-warning {
+    background: var(--warning-50) !important;
+    color: var(--warning-700) !important;
+    border-color: var(--warning-200) !important;
+}
+
+.notification-info {
+    background: var(--info-50) !important;
+    color: var(--info-700) !important;
+    border-color: var(--info-200) !important;
+}
+
+/* Status Messages */
+.status-success {
+    color: var(--success-600) !important;
+    font-weight: 500 !important;
+}
+
+.status-error {
+    color: var(--error-600) !important;
+    font-weight: 500 !important;
+}
+
+.status-processing {
+    color: var(--primary-600) !important;
+    font-weight: 500 !important;
+}
+
+/* Ensure all inline styles are overridden */
+[style*="background-color"] {
+    background-color: initial !important;
+}
+
+[style*="color"]:not(.material-icons-round) {
+    color: initial !important;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .upload-area {
+        padding: var(--space-8) !important;
+    }
+
+    .upload-icon {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .upload-text {
+        font-size: var(--text-lg) !important;
+    }
+
+    .credits-number {
+        font-size: var(--text-4xl) !important;
+    }
+
+    .feature-card {
+        padding: var(--space-4) !important;
+    }
+}
+
+/* Ensure all buttons follow the design system */
+button:not(.btn) {
+    /* Force any non-classed buttons to inherit base styles */
+    font-family: 'Inter', sans-serif !important;
+    transition: all var(--transition-normal) !important;
+}
+
+/* Remove any Bootstrap-like styles that might conflict */
+.btn-block {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+/* Fix any z-index issues */
+.modal,
+.dropdown {
+    z-index: var(--z-modal) !important;
+}
+
+.tooltip {
+    z-index: var(--z-tooltip) !important;
+}

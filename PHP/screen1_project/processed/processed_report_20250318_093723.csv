@@ -1,0 +1,21 @@
+"General Report"
+
+"Step 1: Upload File"
+"File Uploaded Successfully: output.json"
+
+"Step 2: Normalize Data"
+"Data normalization and cleaning has been successfully completed."
+"Preview of Normalized Data:"
+id,filename,content,processed_at
+41,output.json,"{
+    ""transcribed_text"": ""The way education works today is really much like vaudeville. You know, before there was radio and TV and movies, you had vaudeville where every town would have their town play, the town troupe, the sort of acting troupe that would be the entertainment. But then along came movies and TV and video games where you take the smartest, best people in any arena, like whether they're acting, writing, directing, speaking, special effects. You spend tens of millions, sometimes hundreds of millions of dollars creating a great movie or a great video game and you make it as compelling as possible. Now that crushes. Vaudeville crushes. So what you actually want to have is an interactive learning experience that is as compelling as possible. And you don't actually want a teacher in front of a board doing a vaudeville act. Education system is still stuck in the 19th century while the world has moved on to the 21st. We need to innovate education to match the pace of technological advancement."",
+    ""chatgpt_response"": ""Absolutely, the point you have raised is quite significant. As the world moves towards a more technology-centric era, the educational system should also evolve. Online learning systems, interactive modules, game-based learning, virtual reality experiences can all provide more engaging and effective avenues for education compared to traditional lecturing methods. The increased use of digital platforms could lead to a much more personalized, adaptive, and immersive learning experience, much like what we observe in high-quality movies or video games. This could potentially revolutionize the education system, making it more suited to the needs and interests of individual students, fostering stronger learning outcomes, and preparing students for a rapidly advancing 21st-century world.""
+}","2025-03-18 13:37:16"
+
+"Step 3: Integrate Data into MySQL"
+"Data has been successfully added to the database."
+"Clean and prepared data is stored in the database."
+
+"Step 4: Generate Report"
+"This report includes all details of the processing steps performed."
+"The user can download this report for documentation and reference."

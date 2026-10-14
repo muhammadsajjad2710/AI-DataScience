@@ -1,0 +1,43 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+Add Contract
+{% endblock page_title %}
+
+{% block main_content %}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Add Contract</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form role="form" method="post" action="{% url 'add_contract_save' %}">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Contract_ID">Contract ID</label>
+                                <input type="text" class="form-control" id="Contract_ID" name="Contract_ID" placeholder="Enter Contract ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="Contract_UDAs">Compass Credential ID</label>
+                                <input type="text" class="form-control" id="Contract_UDAs" name="Contract_UDAs" placeholder="Enter Compass Credential ID">
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+{% endblock main_content %}

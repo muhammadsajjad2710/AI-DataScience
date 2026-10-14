@@ -1,0 +1,253 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+   Activity Details Template
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+        <div class="container-fluid">
+
+           
+
+
+            {% if messages %}
+                                <div class="form-group">
+                                <div class="col-12">
+                                    {% for message in messages %}
+                                    {% if message.tags == "error" %}
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                    {% elif message.tags == "success" %}
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                                </div>
+                                {% endif %}
+                                
+                                <form method="post" action="{% url 'activity_details' %}" class="form-inline">
+                                    {% csrf_token %}
+                                
+                                    <div class="form-group mx-2">
+                                        <label for="contract_id" class="mr-2">Contract ID:</label>
+                                        <input type="text" class="form-control" name="contract_id" id="contract_id" value="{{ contract_id|default:'' }}" required>
+                                    </div>
+                                    
+                                    <div class="form-group mx-2">
+                                        <label for="start_date" class="mr-2">Start Date:</label>
+                                        <input type="date" class="form-control" name="start_date" id="start_date" value="{{ start_date|default:'' }}" required>
+                                    </div>
+                                
+                                    <div class="form-group mx-2">
+                                        <label for="end_date" class="mr-2">End Date:</label>
+                                        <input type="date" class="form-control" name="end_date" id="end_date" value="{{ end_date|default:'' }}" required>
+                                    </div>
+                                   
+                                    <button type="submit" class="btn btn-primary mx-2">Search Activity</button>
+                                </form>
+                                <div class="form-group mx-2">
+                                    <label>Select Performer  : </label> <strong><h3 id="focus_staff" name="focus_staff"></h3> </strong><br>
+                                    <input type="hidden" name="selected_staff_id">
+                                </div>
+                                
+                             <br>
+                         
+                                 
+                                <div class="row justify-content-center">
+                                    <div class="slider-container" id="sliderContainer">
+                                        {% for performer in all_performers %}
+                                            <div class="slider-item" onclick="toggleEnlarged(this)">
+                                                <i class="fas fa-user" style="font-size: 80px;"></i>
+                                                <input type="hidden" name="selected_staff_id2" value="{{ performer.Performer_ID }}">
+                                                <p style="font-size: 12px;">{{ performer.Surname }} {{ performer.Forename }}</p>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                
+<br><br>
+
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Staff Details</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0">
+                            <table id="data-table" class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>CRN IN</th>
+                                        <th>Contract ID</th>
+                                        <th>Performer ID</th>
+                                        <th>Errors</th>
+                                        <th>Patient Surname</th>
+                                        <th>Patient Forename</th>
+                                        <th>Date of Birth</th>
+                                        <th>Treatment Start Date</th>
+                                        <th>Treatment End Date</th>
+                                        <th>Patient Charge</th>
+                                        <th>Period</th>
+                                        <th>Units</th>
+                                        <th>Contra Period Units PCharge</th>
+                                        <th>NHS Number</th>
+                                        <th>Processing Date</th>
+                                        <th>Status</th>
+                                        <th>Form Type</th>
+                                        <th>Created Amended Deleted by</th>
+                                        <th>Creation Amend Deletion Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for data_report in data_reports %}
+                                        <tr>
+                                            <td>{{ data_report.id }}</td>
+                                            <td>{{ data_report.CRN_IN }}</td>
+                                            <td>{{ data_report.ContractID }}</td>
+                                            <td>{{ data_report.PerformerID }}</td>
+                                            <td>{{ data_report.Errors }}</td>
+                                            <td>{{ data_report.PatientSurname }}</td>
+                                            <td>{{ data_report.PatientForename }}</td>
+                                            <td>{{ data_report.DateOfBirth }}</td>
+                                            <td>{{ data_report.TreatmentStartDate }}</td>
+                                            <td>{{ data_report.TreatmentEndDate }}</td>
+                                            <td>{{ data_report.PatientCharge }}</td>
+                                            <td>{{ data_report.Period }}</td>
+                                            <td>{{ data_report.Units }}</td>
+                                            <td>{{ data_report.ContraPeriod_Units_PCharge }}</td>
+                                            <td>{{ data_report.NHSNumber }}</td>
+                                            <td>{{ data_report.ProcessingDate }}</td>
+                                            <td>{{ data_report.Status }}</td>
+                                            <td>{{ data_report.FormType }}</td>
+                                            <td>{{ data_report.CreatedAmendedDeletedby }}</td>
+                                            <td>{{ data_report.CreationAmendDeletionDate }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- /.card-body -->
+                        </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+
+        </div><!-- /.container-fluid -->
+      </section>
+
+   
+     
+
+
+      <style>
+        .slider-container {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+    
+        .slider-item {
+            display: inline-block;
+            margin-right: 10px;
+            cursor: pointer; /* Add cursor style to indicate the items are clickable */
+        }
+    
+        .selected .fas {
+            color: green !important;
+        }
+    </style>
+    
+
+    <script>
+        function toggleEnlarged(element) {
+            var sliderItems = document.querySelectorAll('.slider-item');
+        
+            // Remove the 'selected' class from all items
+            sliderItems.forEach(function (item) {
+                item.classList.remove('selected');
+            });
+        
+            // Get the selected_staff_id
+            var selectedStaffId = element.querySelector('input[name="selected_staff_id2"]').value;
+        
+            // Set the name of the focused staff member in the h3 element
+            var firstName = element.querySelector('p').textContent.split(' ')[0];
+            var lastName = element.querySelector('p').textContent.split(' ')[1];
+        
+            document.getElementById('focus_staff').textContent = firstName + ' ' + lastName;
+        
+            // Update the hidden input field in the form
+            document.querySelector('input[name="selected_staff_id"]').value = selectedStaffId;
+        
+            // Add the 'selected' class to the clicked element
+            element.classList.add('selected');
+        
+            // Make an AJAX request to fetch data for the selected performer
+            fetch('/get_performer_data/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: 'performer_id=' + selectedStaffId
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Update your table with the received data
+                    updateTable(data.data_reports);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+        
+        function updateTable(dataReports) {
+            // Assuming you have a table with the ID 'data-table'
+            var dataTable = document.getElementById('data-table');
+            dataTable.innerHTML = ''; // Clear existing data
+        
+            // Add table headers
+            var headerRow = '<tr>';
+            for (var key in dataReports[0]) {
+                if (dataReports[0].hasOwnProperty(key)) {
+                    headerRow += '<th>' + key + '</th>';
+                }
+            }
+            headerRow += '</tr>';
+            dataTable.innerHTML += headerRow;
+        
+            // Add table rows
+            dataReports.forEach(function (report) {
+                var row = '<tr>';
+                for (var key in report) {
+                    if (report.hasOwnProperty(key)) {
+                        row += '<td>' + report[key] + '</td>';
+                    }
+                }
+                row += '</tr>';
+                dataTable.innerHTML += row;
+            });
+        }
+        
+    </script>
+    
+    
+    
+  {% endblock main_content %}

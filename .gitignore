@@ -1,0 +1,24 @@
+# Installed dependencies
+myenv/
+.venv/
+venv/
+node_modules/
+vendor/
+__pycache__/
+*.py[cod]
+
+# Local secrets
+.env
+.env.*
+
+# Archives and local backup copies
+*.zip
+cursor-clean-20261014-210316/
+
+# Uploaded recordings and generated files
+**/storage/uploads/**
+**/uploads/**
+*.wav
+*.m4a
+*.mp3
+*.webm

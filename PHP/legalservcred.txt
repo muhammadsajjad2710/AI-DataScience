@@ -1,0 +1,10 @@
+
+Legal Document 
+Project Server Credentials
+login: sajjad
+password: 12345
+
+server: 167.71.135.126
+server2:142.93.40.194
+port: 21
+

@@ -1,0 +1,2475 @@
+{
+    "database": "db2",
+    "tables": {
+        "members": {
+            "columns": [
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "username",
+                    "type": "varchar(50)",
+                    "null": "NO",
+                    "key": "UNI",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "email",
+                    "type": "varchar(100)",
+                    "null": "NO",
+                    "key": "UNI",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "password",
+                    "type": "varchar(255)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "credits",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "",
+                    "default": "10",
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "updated_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+                },
+                {
+                    "field": "last_login",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "status",
+                    "type": "enum('active','inactive','suspended')",
+                    "null": "YES",
+                    "key": "",
+                    "default": "active",
+                    "extra": ""
+                },
+                {
+                    "field": "firstname",
+                    "type": "varchar(100)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "lastname",
+                    "type": "varchar(100)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "doctorname",
+                    "type": "varchar(150)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "phone",
+                    "type": "varchar(20)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "company",
+                    "type": "varchar(150)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "storage_quota_mb",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "",
+                    "default": "500",
+                    "extra": ""
+                },
+                {
+                    "field": "storage_used_mb",
+                    "type": "decimal(10,2)",
+                    "null": "YES",
+                    "key": "",
+                    "default": "0.00",
+                    "extra": ""
+                },
+                {
+                    "field": "doc_upload_enabled",
+                    "type": "tinyint(1)",
+                    "null": "YES",
+                    "key": "",
+                    "default": "1",
+                    "extra": ""
+                },
+                {
+                    "field": "max_docs_per_transcription",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "",
+                    "default": "10",
+                    "extra": ""
+                }
+            ],
+            "sample_data": [
+                {
+                    "member_id": "1",
+                    "username": "admin",
+                    "email": "admin@medicalnotes.local",
+                    "password": "$2y$10$0mxgN\/1uIytxShxNDO4KOuNqoZfQ8QpzPgHeiwsNGf1gw1hYsxFba",
+                    "credits": "1000",
+                    "created_at": "2025-08-22 10:05:13",
+                    "updated_at": "2025-08-22 10:34:51",
+                    "last_login": null,
+                    "status": "active",
+                    "firstname": "",
+                    "lastname": "",
+                    "doctorname": null,
+                    "phone": null,
+                    "company": null,
+                    "storage_quota_mb": "500",
+                    "storage_used_mb": "0.00",
+                    "doc_upload_enabled": "1",
+                    "max_docs_per_transcription": "10"
+                },
+                {
+                    "member_id": "2",
+                    "username": "testuser",
+                    "email": "test@medicalnotes.local",
+                    "password": "$2y$10$8LinMEAwv\/beYnsNBECOMeg2K2UzuR9evxqWmPQx5rRWJrD0QCn1q",
+                    "credits": "151",
+                    "created_at": "2025-08-22 10:06:14",
+                    "updated_at": "2025-10-08 09:19:53",
+                    "last_login": null,
+                    "status": "active",
+                    "firstname": "",
+                    "lastname": "",
+                    "doctorname": null,
+                    "phone": null,
+                    "company": null,
+                    "storage_quota_mb": "500",
+                    "storage_used_mb": "0.65",
+                    "doc_upload_enabled": "1",
+                    "max_docs_per_transcription": "10"
+                },
+                {
+                    "member_id": "3",
+                    "username": "test",
+                    "email": "test@gmail.com",
+                    "password": "$2y$10$amDf561fofHWHgGCr0wjG.374h5TKcbzh56ihSiVoYHUUHMo5qr4G",
+                    "credits": "160",
+                    "created_at": "2025-08-25 11:57:46",
+                    "updated_at": "2025-08-25 12:18:52",
+                    "last_login": null,
+                    "status": "active",
+                    "firstname": "",
+                    "lastname": "",
+                    "doctorname": null,
+                    "phone": null,
+                    "company": null,
+                    "storage_quota_mb": "500",
+                    "storage_used_mb": "0.00",
+                    "doc_upload_enabled": "1",
+                    "max_docs_per_transcription": "10"
+                }
+            ],
+            "row_count": "6"
+        },
+        "patients": {
+            "columns": [
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "mr_number",
+                    "type": "varchar(50)",
+                    "null": "NO",
+                    "key": "UNI",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "first_name",
+                    "type": "varchar(100)",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "last_name",
+                    "type": "varchar(100)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "date_of_birth",
+                    "type": "date",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "gender",
+                    "type": "enum('Male','Female','Other')",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "phone",
+                    "type": "varchar(20)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "email",
+                    "type": "varchar(100)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "address",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "emergency_contact",
+                    "type": "varchar(100)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "emergency_phone",
+                    "type": "varchar(20)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "blood_type",
+                    "type": "varchar(10)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "allergies",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "medical_conditions",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "updated_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+                },
+                {
+                    "field": "is_active",
+                    "type": "tinyint(1)",
+                    "null": "YES",
+                    "key": "",
+                    "default": "1",
+                    "extra": ""
+                }
+            ],
+            "sample_data": [
+                {
+                    "patient_id": "1",
+                    "mr_number": "MRN-2025-0076",
+                    "member_id": "2",
+                    "first_name": "test",
+                    "last_name": "user",
+                    "date_of_birth": "2001-07-06",
+                    "gender": "Male",
+                    "phone": "29487294379234",
+                    "email": null,
+                    "address": null,
+                    "emergency_contact": null,
+                    "emergency_phone": null,
+                    "blood_type": null,
+                    "allergies": null,
+                    "medical_conditions": null,
+                    "created_at": "2025-10-06 11:08:47",
+                    "updated_at": "2025-10-06 11:08:47",
+                    "is_active": "1"
+                },
+                {
+                    "patient_id": "2",
+                    "mr_number": "MRN-2025-8652",
+                    "member_id": "2",
+                    "first_name": "xyz",
+                    "last_name": "dfjs",
+                    "date_of_birth": "2025-10-01",
+                    "gender": "Female",
+                    "phone": "298934",
+                    "email": null,
+                    "address": null,
+                    "emergency_contact": null,
+                    "emergency_phone": null,
+                    "blood_type": null,
+                    "allergies": null,
+                    "medical_conditions": null,
+                    "created_at": "2025-10-06 11:51:20",
+                    "updated_at": "2025-10-06 11:51:20",
+                    "is_active": "1"
+                },
+                {
+                    "patient_id": "3",
+                    "mr_number": "MRN-2025-6347",
+                    "member_id": "2",
+                    "first_name": "sp",
+                    "last_name": "sf",
+                    "date_of_birth": "2024-05-06",
+                    "gender": "Male",
+                    "phone": "23452",
+                    "email": null,
+                    "address": null,
+                    "emergency_contact": null,
+                    "emergency_phone": null,
+                    "blood_type": null,
+                    "allergies": null,
+                    "medical_conditions": null,
+                    "created_at": "2025-10-06 12:27:48",
+                    "updated_at": "2025-10-06 12:27:48",
+                    "is_active": "1"
+                }
+            ],
+            "row_count": "5"
+        },
+        "audio_transcriptions": {
+            "columns": [
+                {
+                    "field": "id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "mr_number",
+                    "type": "varchar(50)",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "audio_file_path",
+                    "type": "varchar(500)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "transcribed_text",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "medical_analysis",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "json_file_path",
+                    "type": "varchar(500)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "log_file_path",
+                    "type": "varchar(500)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "updated_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+                },
+                {
+                    "field": "processing_status",
+                    "type": "enum('pending','processing','completed','failed')",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "pending",
+                    "extra": ""
+                },
+                {
+                    "field": "error_message",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_size",
+                    "type": "bigint",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "duration_seconds",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                }
+            ],
+            "sample_data": [
+                {
+                    "id": "1",
+                    "member_id": "1",
+                    "patient_id": null,
+                    "mr_number": null,
+                    "audio_file_path": "\/test\/audio.mp3",
+                    "transcribed_text": "This is a test transcription with medical content including diagnosis of hypertension and prescription of lisinopril 10mg daily.",
+                    "medical_analysis": null,
+                    "json_file_path": null,
+                    "log_file_path": null,
+                    "created_at": "2025-09-26 09:58:27",
+                    "updated_at": "2025-09-26 09:58:27",
+                    "processing_status": "completed",
+                    "error_message": null,
+                    "file_size": null,
+                    "duration_seconds": null
+                },
+                {
+                    "id": "2",
+                    "member_id": "2",
+                    "patient_id": "2",
+                    "mr_number": "MRN-2025-8652",
+                    "audio_file_path": "\/var\/www\/html\/medicalnotes\/medicalvoice\/storage\/uploads\/audio\/files\/recorded_audio_1759751495189.wav",
+                    "transcribed_text": null,
+                    "medical_analysis": null,
+                    "json_file_path": null,
+                    "log_file_path": null,
+                    "created_at": "2025-10-06 11:51:37",
+                    "updated_at": "2025-10-06 11:51:37",
+                    "processing_status": "pending",
+                    "error_message": null,
+                    "file_size": null,
+                    "duration_seconds": null
+                }
+            ],
+            "row_count": "2"
+        },
+        "medicalvoice_transcriptions": {
+            "columns": [
+                {
+                    "field": "transcription_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "audio_filename",
+                    "type": "varchar(255)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "audio_path",
+                    "type": "varchar(500)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "transcription_text",
+                    "type": "longtext",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "medical_analysis",
+                    "type": "longtext",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "json_output_path",
+                    "type": "varchar(500)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "processing_status",
+                    "type": "enum('pending','processing','completed','failed')",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "pending",
+                    "extra": ""
+                },
+                {
+                    "field": "processing_time_seconds",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "updated_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+                },
+                {
+                    "field": "has_documents",
+                    "type": "tinyint(1)",
+                    "null": "YES",
+                    "key": "",
+                    "default": "0",
+                    "extra": ""
+                },
+                {
+                    "field": "combined_analysis",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                }
+            ],
+            "sample_data": [
+                {
+                    "transcription_id": "2",
+                    "member_id": "2",
+                    "patient_id": null,
+                    "audio_filename": "audiocleaner_20250911_111630_file.mp3",
+                    "audio_path": "\/var\/www\/html\/medicalnotes2\/medicalvoice\/storage\/uploads\/audio\/files\/audiocleaner_20250911_111630_file.mp3",
+                    "transcription_text": "Short conversation between doctor and patient. Avoid cold drinks and too much oily food. Okay doctor, how much is your fees? It's 300. Thank you doctor.\n",
+                    "medical_analysis": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"document\",\n  \"entry\": [\n    {\n      \"resource\": {\n        \"resourceType\": \"DocumentReference\",\n        \"status\": \"final\",\n        \"type\": {\n          \"coding\": [\n            {\n              \"system\": \"http:\/\/loinc.org\",\n              \"code\": \"11506-3\",\n              \"display\": \"Progress note\"\n            }\n          ]\n        },\n        \"content\": [\n          {\n            \"attachment\": {\n              \"contentType\": \"text\/plain\",\n              \"data\": \"CLINICAL SUMMARY:\\nThe patient has been advised to avoid cold drinks and excessively oily food. The specific reason for this advice is not provided in the transcript, but it could be related to a variety of conditions such as gastroesophageal reflux disease (GERD), irritable bowel syndrome (IBS), or other digestive issues.\\n\\nMEDICAL TERMINOLOGY:\\nNo specific medical terminology is used in this conversation.\\n\\nRECOMMENDATIONS:\\nWithout more detailed information about the patient's condition, it's difficult to provide specific recommendations. However, the patient should follow the doctor's advice regarding dietary changes. If symptoms persist or worsen, the patient should seek further medical evaluation.\\n\\nRISK ASSESSMENT:\\nThere are no immediate red flags or potential concerns identified from this conversation. However, the advice given suggests that the patient may be experiencing some form of digestive discomfort or disease.\\n\\nSTRUCTURED DATA:\\nNo vital signs, medications, or diagnoses were m...\"\n            }\n          }\n        ]\n      }\n    }\n  ]\n}",
+                    "json_output_path": "\/var\/www\/html\/medicalnotes\/medicalvoice\/storage\/uploads\/audio\/json\/audiocleaner_20250911_111630_file.json",
+                    "processing_status": "completed",
+                    "processing_time_seconds": "688986",
+                    "created_at": "2025-09-29 07:29:48",
+                    "updated_at": "2025-10-07 06:52:54",
+                    "has_documents": "1",
+                    "combined_analysis": null
+                },
+                {
+                    "transcription_id": "3",
+                    "member_id": "2",
+                    "patient_id": null,
+                    "audio_filename": "recording_1759131027471.wav",
+                    "audio_path": "\/var\/www\/html\/medicalnotes2\/medicalvoice\/storage\/uploads\/audio\/files\/recording_1759131027471.wav",
+                    "transcription_text": null,
+                    "medical_analysis": null,
+                    "json_output_path": null,
+                    "processing_status": "failed",
+                    "processing_time_seconds": null,
+                    "created_at": "2025-09-29 07:30:25",
+                    "updated_at": "2025-10-02 08:46:38",
+                    "has_documents": "0",
+                    "combined_analysis": null
+                },
+                {
+                    "transcription_id": "4",
+                    "member_id": "2",
+                    "patient_id": null,
+                    "audio_filename": "recorded_audio_1759131027437.wav",
+                    "audio_path": "\/var\/www\/html\/medicalnotes2\/medicalvoice\/storage\/uploads\/audio\/files\/recorded_audio_1759131027437.wav",
+                    "transcription_text": null,
+                    "medical_analysis": null,
+                    "json_output_path": null,
+                    "processing_status": "failed",
+                    "processing_time_seconds": null,
+                    "created_at": "2025-09-29 07:30:26",
+                    "updated_at": "2025-10-02 08:46:38",
+                    "has_documents": "0",
+                    "combined_analysis": null
+                }
+            ],
+            "row_count": "57"
+        },
+        "patient_documents": {
+            "columns": [
+                {
+                    "field": "document_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "mr_number",
+                    "type": "varchar(50)",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "transcription_id",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "document_type",
+                    "type": "enum('lab_report','prescription','imaging','clinical_note','discharge_summary','consultation','other')",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "original_filename",
+                    "type": "varchar(255)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "stored_filename",
+                    "type": "varchar(255)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_path",
+                    "type": "varchar(500)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_type",
+                    "type": "varchar(50)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_size",
+                    "type": "bigint",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "extracted_text",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "metadata",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "upload_date",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "processing_status",
+                    "type": "enum('pending','processing','completed','failed')",
+                    "null": "YES",
+                    "key": "",
+                    "default": "pending",
+                    "extra": ""
+                },
+                {
+                    "field": "is_active",
+                    "type": "tinyint(1)",
+                    "null": "YES",
+                    "key": "",
+                    "default": "1",
+                    "extra": ""
+                }
+            ],
+            "sample_data": [],
+            "row_count": "0"
+        },
+        "patient_reports": {
+            "columns": [
+                {
+                    "field": "report_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "mr_number",
+                    "type": "varchar(50)",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "report_type",
+                    "type": "enum('transcription_summary','medical_summary','visit_report','diagnostic_report','comprehensive_report')",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "report_title",
+                    "type": "varchar(255)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "report_content",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "report_text",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "report_html",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "related_transcriptions",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "related_documents",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "generated_by",
+                    "type": "varchar(100)",
+                    "null": "YES",
+                    "key": "",
+                    "default": "system",
+                    "extra": ""
+                },
+                {
+                    "field": "generation_date",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "export_format",
+                    "type": "enum('json','pdf','html','fhir','hl7')",
+                    "null": "YES",
+                    "key": "",
+                    "default": "json",
+                    "extra": ""
+                },
+                {
+                    "field": "fhir_resource",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "is_finalized",
+                    "type": "tinyint(1)",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "0",
+                    "extra": ""
+                },
+                {
+                    "field": "finalized_date",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "digital_signature",
+                    "type": "varchar(500)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                }
+            ],
+            "sample_data": [],
+            "row_count": "0"
+        },
+        "patient_medical_history": {
+            "columns": [
+                {
+                    "field": "history_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "mr_number",
+                    "type": "varchar(50)",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "history_type",
+                    "type": "enum('medication','allergy','diagnosis','procedure','immunization','family_history','social_history')",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "description",
+                    "type": "text",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "icd_code",
+                    "type": "varchar(20)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "snomed_code",
+                    "type": "varchar(20)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "start_date",
+                    "type": "date",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "end_date",
+                    "type": "date",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "severity",
+                    "type": "enum('mild','moderate','severe','critical')",
+                    "null": "YES",
+                    "key": "",
+                    "default": "moderate",
+                    "extra": ""
+                },
+                {
+                    "field": "status",
+                    "type": "enum('active','inactive','resolved','chronic')",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "active",
+                    "extra": ""
+                },
+                {
+                    "field": "notes",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "source_transcription_id",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "source_document_id",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "updated_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+                }
+            ],
+            "sample_data": [],
+            "row_count": "0"
+        },
+        "patient_visits": {
+            "columns": [
+                {
+                    "field": "visit_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "mr_number",
+                    "type": "varchar(50)",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "visit_date",
+                    "type": "datetime",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "visit_type",
+                    "type": "enum('consultation','follow_up','emergency','routine_checkup','procedure','telemedicine')",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "chief_complaint",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "diagnosis_summary",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "treatment_plan",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "provider_name",
+                    "type": "varchar(255)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "provider_id",
+                    "type": "varchar(100)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "facility_name",
+                    "type": "varchar(255)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "transcription_ids",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "document_ids",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "report_ids",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "visit_notes",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "follow_up_required",
+                    "type": "tinyint(1)",
+                    "null": "YES",
+                    "key": "",
+                    "default": "0",
+                    "extra": ""
+                },
+                {
+                    "field": "follow_up_date",
+                    "type": "date",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "updated_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+                }
+            ],
+            "sample_data": [],
+            "row_count": "0"
+        },
+        "patient_access_log": {
+            "columns": [
+                {
+                    "field": "log_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "access_type",
+                    "type": "enum('view','create','update','delete')",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "access_timestamp",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "ip_address",
+                    "type": "varchar(45)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "user_agent",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                }
+            ],
+            "sample_data": [
+                {
+                    "log_id": "1",
+                    "patient_id": "1",
+                    "member_id": "2",
+                    "access_type": "create",
+                    "access_timestamp": "2025-10-06 11:08:47",
+                    "ip_address": "119.73.100.145",
+                    "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"
+                },
+                {
+                    "log_id": "2",
+                    "patient_id": "1",
+                    "member_id": "2",
+                    "access_type": "view",
+                    "access_timestamp": "2025-10-06 11:08:47",
+                    "ip_address": "119.73.100.145",
+                    "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"
+                },
+                {
+                    "log_id": "3",
+                    "patient_id": "1",
+                    "member_id": "2",
+                    "access_type": "view",
+                    "access_timestamp": "2025-10-06 11:08:47",
+                    "ip_address": "119.73.100.145",
+                    "user_agent": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/140.0.0.0 Safari\/537.36"
+                }
+            ],
+            "row_count": "24"
+        },
+        "credit_transactions": {
+            "columns": [
+                {
+                    "field": "id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "transaction_type",
+                    "type": "enum('purchase','usage','refund','bonus')",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "amount",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "balance_after",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "description",
+                    "type": "varchar(255)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "reference_id",
+                    "type": "varchar(100)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                }
+            ],
+            "sample_data": [],
+            "row_count": "0"
+        },
+        "processing_logs": {
+            "columns": [
+                {
+                    "field": "id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "module_type",
+                    "type": "enum('medicalvoice','medicalvision')",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "action",
+                    "type": "varchar(100)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "status",
+                    "type": "enum('success','error','warning','info')",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "message",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "metadata",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "ip_address",
+                    "type": "varchar(45)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                }
+            ],
+            "sample_data": [
+                {
+                    "id": "1",
+                    "member_id": "2",
+                    "module_type": "medicalvoice",
+                    "action": "download_json",
+                    "status": "success",
+                    "message": "Downloaded JSON file: audio2.json",
+                    "metadata": null,
+                    "ip_address": "119.73.124.142",
+                    "created_at": "2025-08-25 06:48:18"
+                },
+                {
+                    "id": "2",
+                    "member_id": "2",
+                    "module_type": "medicalvoice",
+                    "action": "download_json",
+                    "status": "success",
+                    "message": "Downloaded JSON file: audio2.json",
+                    "metadata": null,
+                    "ip_address": "119.73.124.142",
+                    "created_at": "2025-08-25 07:13:05"
+                },
+                {
+                    "id": "3",
+                    "member_id": "2",
+                    "module_type": "medicalvoice",
+                    "action": "download_json",
+                    "status": "success",
+                    "message": "Downloaded JSON file: audio2.json",
+                    "metadata": null,
+                    "ip_address": "119.73.124.142",
+                    "created_at": "2025-08-25 08:28:32"
+                }
+            ],
+            "row_count": "21"
+        },
+        "transcription_documents": {
+            "columns": [
+                {
+                    "field": "id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "transcription_id",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "patient_id",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "mr_number",
+                    "type": "varchar(50)",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "document_type",
+                    "type": "varchar(50)",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "other",
+                    "extra": ""
+                },
+                {
+                    "field": "original_filename",
+                    "type": "varchar(255)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "stored_filename",
+                    "type": "varchar(255)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_path",
+                    "type": "varchar(500)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_type",
+                    "type": "varchar(20)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_size",
+                    "type": "bigint",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "extracted_text",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                }
+            ],
+            "sample_data": [
+                {
+                    "id": "1",
+                    "transcription_id": "15",
+                    "member_id": "2",
+                    "patient_id": null,
+                    "mr_number": null,
+                    "document_type": "other",
+                    "original_filename": "Atrial Fibrillation.pdf",
+                    "stored_filename": "1759398960_Atrial_Fibrillation.pdf",
+                    "file_path": "\/var\/www\/html\/medicalnotes\/medicalvoice\/storage\/uploads\/documents\/1759398960_Atrial_Fibrillation.pdf",
+                    "file_type": "pdf",
+                    "file_size": "70287",
+                    "extracted_text": "Disease\n \nName:\n \nAtrial\n \nFibrillation\n \n(A-fib)\n \nDetails:\n \nDefinition:\n \nAtrial\n \nfibrillation\n \nis\n \na\n \ncommon\n \ntype\n \nof\n \narrhythmia,\n \nor\n \nirregular\n \nheartbeat.\n \nIn\n \nA-fib,\n \nthe\n \nupper\n \nchambers\n \nof\n \nthe\n \nheart\n \n(the\n \natria)\n \nbeat\n \nchaotically\n \nand\n \nirregularly,\n \nout\n \nof\n \nsync\n \nwith\n \nthe\n \nlower\n \nchambers\n \n(the\n \nventricles).\n \nThis\n \ndisorganized\n \nelectrical\n \nactivity\n \nleads\n \nto\n \na\n \nrapid\n \nand\n \nirregular\n \nheart\n \nrhythm.\n  \n \nHow\n \nit\n \nWorks:\n \nNormally,\n \nthe\n \nheart's\n \nnatural\n \npacemaker,\n \nthe\n \nsinoatrial\n \n(SA)\n \nnode\n \nlocated\n \nin\n \nthe\n \nright\n \natrium,\n \nsends\n \nout\n \nregular\n \nelectrical\n \nsignals\n \nthat\n \ncoordinate\n \nthe\n \ncontraction\n \nof\n \nthe\n \nheart\n \nchambers.\n \nIn\n \nA-fib,\n \nmultiple\n \nrapid\n \nand\n \ndisorganized\n \nelectrical\n \nsignals\n \nfire\n \nfrom\n \ndifferent\n \nareas\n \nin\n \nthe\n \natria.\n \nThese\n \nchaotic\n \nsignals\n \noverwhelm\n \nthe\n \nSA\n \nnode,\n \ncausing\n \nthe\n \natria\n \nto\n \nquiver\n \nor\n \nfibrill\n \ninstead\n \nof\n \ncontracting\n \neffectively.\n \nAs\n \na\n \nresult,\n \nthe\n \natria\n \ndon't\n \npump\n \nblood\n \nefficiently\n \ninto\n \nthe\n \nventricles.\n \nThe\n \nventricles\n \nthen\n \nbeat\n \nirregularly\n \nas\n \nthey\n \nrespond\n \nto\n \nthe\n \nerratic\n \nsignals\n \nfrom\n \nthe\n \natria.\n \nCauses\n \nand\n \nRisk\n \nFactors:\n \nA-fib\n \ncan\n \nbe\n \ncaused\n \nby\n \nor\n \nassociated\n \nwith\n \nvarious\n \nfactors,\n \nincluding:\n \n\u25cf\n \nHeart\n \nconditions:\n \n\u25cb\n \nHigh\n \nblood\n \npressure\n \n(hypertension)\n \n\u25cb\n \nCoronary\n \nartery\n \ndisease\n \n\u25cb\n \nHeart\n \nfailure\n \n\u25cb\n \nValvular\n \nheart\n \ndisease\n \n(e.g.,\n \nmitral\n \nstenosis,\n \nmitral\n \nregurgitation)\n \n\u25cb\n \nPericarditis\n \n\u25cb\n \nCongenital\n \nheart\n \ndefects\n \n\u25cb\n \nPrevious\n \nheart\n \nsurgery\n \n\u25cf\n \nOther\n \nmedical\n \nconditions:\n \n\u25cb\n \nThyroid\n \nproblems\n \n(especially\n \nhyperthyroidism)\n \n\u25cb\n \nChronic\n \nlung\n \ndisease\n \n(e.g.,\n \nCOPD,\n \npulmonary\n \nembolism)\n \n\u25cb\n \nDiabetes\n \n\u25cb\n \nObesity\n \n\u25cb\n \nSleep\n \napnea\n \n\u25cb\n \nChronic\n \nkidney\n \ndisease\n \n\u25cf\n \nLifestyle\n \nfactors:\n \n\u25cb\n \nExcessive\n \nalcohol\n \nconsumption\n \n(\"holiday\n \nheart\n \nsyndrome\")\n \n\u25cb\n \nStimulants\n \n(e.g.,\n \ncaffeine,\n \ncertain\n \nmedications)\n \n\u25cb\n \nStress\n \n\u25cf\n \nAge:\n \nThe\n \nrisk\n \nof\n \nA-fib\n \nincreases\n \nwith\n \nage.\n \n\u25cf\n \nGenetics:\n \nSome\n \npeople\n \nmay\n \nhave\n \na\n \ngenetic\n \npredisposition\n \nto\n \ndeveloping\n \nA-fib.\n \n\u25cf\n \nSometimes,\n \nthe\n \ncause\n \nof\n \nA-fib\n \nis\n \nunknown\n \n(idiopathic).\n \nSymptoms:\n \nSymptoms\n \nof\n \nA-fib\n \ncan\n \nvary\n \nwidely\n \nfrom\n \nperson\n \nto\n \nperson.\n \nSome\n \nindividuals\n \nmay\n \nexperience\n \nno\n \nsymptoms\n \nat\n \nall,\n \nwhile\n \nothers\n \nhave\n \nnoticeable\n \nand\n \nbothersome\n \nsymptoms.\n \nCommon\n \nsymptoms\n \ninclude:\n \n\u25cf\n \nPalpitations:\n \nA\n \nfluttering,\n \nracing,\n \npounding,\n \nor\n \nskipping\n \nsensation\n \nin\n \nthe\n \nchest.\n \n\u25cf\n \nShortness\n \nof\n \nbreath\n \n(dyspnea):\n \nEspecially\n \nduring\n \nexertion.\n \n\u25cf\n \nFatigue\n \nand\n \nweakness:\n \nFeeling\n \nunusually\n \ntired.\n \n\u25cf\n \nDizziness\n \nor\n \nlightheadedness:\n \nA\n \nfeeling\n \nof\n \nbeing\n \nunsteady\n \nor\n \nfaint.\n \n\u25cf\n \nChest\n \npain\n \nor\n \ndiscomfort:\n \nAlthough\n \nless\n \ncommon\n \nthan\n \nin\n \nother\n \nheart\n \nconditions.\n \n\u25cf\n \nReduced\n \nexercise\n \ntolerance:\n \nDifficulty\n \nperforming\n \nphysical\n \nactivities.\n \nComplications:\n \nA-fib\n \ncan\n \nlead\n \nto\n \nsignificant\n \ncomplications:\n \n\u25cf\n \nStroke:\n \nThis\n \nis\n \nthe\n \nmost\n \nserious\n \nrisk.\n \nThe\n \nirregular\n \nbeating\n \nof\n \nthe\n \natria\n \ncan\n \ncause\n \nblood\n \nto\n \npool\n \nand\n \nform\n \nclots.\n \nIf\n \na\n \nclot\n \ntravels\n \nfrom\n \nthe\n \nheart\n \nto\n \nthe\n \nbrain,\n \nit\n \ncan\n \nblock\n \nblood\n \nflow\n \nand\n \ncause\n \na\n \nstroke.\n \nIndividuals\n \nwith\n \nA-fib\n \nhave\n \na\n \nsignificantly\n \nincreased\n \nrisk\n \nof\n \nstroke.\n \n\u25cf\n \nHeart\n \nfailure:\n \nOver\n \ntime,\n \nthe\n \nrapid\n \nand\n \nirregular\n \nheart\n \nrhythm\n \ncan\n \nweaken\n \nthe\n \nheart\n \nmuscle,\n \nleading\n \nto\n \nheart\n \nfailure.\n \n\u25cf\n \nBlood\n \nclots\n \nin\n \nother\n \norgans:\n \nAlthough\n \nless\n \ncommon\n \nthan\n \nstroke,\n \nblood\n \nclots\n \ncan\n \ntravel\n \nto\n \nother\n \nparts\n \nof\n \nthe\n \nbody.\n \n\u25cf\n \nReduced\n \nquality\n \nof\n \nlife:\n \nSymptoms\n \nlike\n \nfatigue\n \nand\n \nshortness\n \nof\n \nbreath\n \ncan\n \nsignificantly\n \nimpact\n \ndaily\n \nactivities.\n \nDiagnosis:\n \nDiagnosis\n \nof\n \nA-fib\n \ntypically\n \ninvolves:\n \n\u25cf\n \nElectrocardiogram\n \n(ECG\n \nor\n \nEKG):\n \nThis\n \nis\n \nthe\n \nprimary\n \ndiagnostic\n \ntool.\n \nIt\n \nrecords\n \nthe\n \nelectrical\n \nactivity\n \nof\n \nthe\n \nheart\n \nand\n \ncan\n \nclearly\n \nshow\n \nthe\n \nirregular\n \nrhythm\n \nof\n \nA-fib.\n \n\u25cf\n \nHolter\n \nmonitor:\n \nA\n \nportable\n \nECG\n \ndevice\n \nworn\n \nfor\n \n24-48\n \nhours\n \n(or\n \nlonger)\n \nto\n \ncontinuously\n \nrecord\n \nthe\n \nheart's\n \nrhythm,\n \nespecially\n \nif\n \nA-fib\n \nepisodes\n \nare\n \ninfrequent.\n \n\u25cf\n \nEvent\n \nmonitor:\n \nA\n \ndevice\n \nworn\n \nfor\n \nseveral\n \nweeks\n \nthat\n \nthe\n \npatient\n \nactivates\n \nwhen\n \nthey\n \nfeel\n \nsymptoms.\n \n\u25cf\n \nEchocardiogram:\n \nAn\n \nultrasound\n \nof\n \nthe\n \nheart\n \nto\n \nassess\n \nits\n \nstructure\n \nand\n \nfunction\n \nand\n \nlook\n \nfor\n \nunderlying\n \nheart\n \nconditions.\n \n\u25cf\n \nBlood\n \ntests:\n \nTo\n \ncheck\n \nfor\n \nthyroid\n \nproblems,\n \nelectrolyte\n \nimbalances,\n \nand\n \nother\n \nconditions\n \nthat\n \nmight\n \ncontribute\n \nto\n \nA-fib.\n \n\u25cf\n \nSometimes,\n \nmore\n \ninvasive\n \ntests\n \nlike\n \nelectrophysiological\n \nstudies\n \n(EPS)\n \nmay\n \nbe\n \nneeded.\n",
+                    "created_at": "2025-10-02 09:56:00"
+                },
+                {
+                    "id": "2",
+                    "transcription_id": "15",
+                    "member_id": "2",
+                    "patient_id": null,
+                    "mr_number": null,
+                    "document_type": "other",
+                    "original_filename": "Hospital Medicine disease and disorder list.pdf",
+                    "stored_filename": "1759400521_Hospital_Medicine_disease_and_disorder_list.pdf",
+                    "file_path": "\/var\/www\/html\/medicalnotes\/medicalvoice\/storage\/uploads\/documents\/1759400521_Hospital_Medicine_disease_and_disorder_list.pdf",
+                    "file_type": "pdf",
+                    "file_size": "61067",
+                    "extracted_text": "Certificate of Added Qualifications Examination in Hospital Medicine  \n \nDisease and Disorder List  \n \n \nCardiology  \nArrhythmias  \nDeep venous thrombosis   \nHeart failure  \nHypertension  \nInflammatory\/infectious disease  \n\uf0b7 Endocarditis  \n\uf0b7 Myocarditis  \n\uf0b7 Pericardial disease  \nIschemic disease  \nPeripheral vascular disease  \nShock  \nSyncope  \nValvular disease  \n \nPulmonology  \nAcute\/chronic respiratory failure  \nAssisted ventilation  \nAsthma  \nChronic obstructive pulmonary disease  \nInterstitial lung disease  \nNeoplasms\/M alignancies  \nPleural disease  \nPneumonia  \nPneumothorax  \nPulmonary embolism  \nTuberculosis  \n \nGastroenterology  \nUpper gastrointestinal disorders  \n\uf0b7 Bleeding  \n\uf0b7 Gastroparesis  \nLower gastrointestinal disorders  \n\uf0b7 Bleeding  \n\uf0b7 Constipation  \n\uf0b7 Diverticulosis  \n\uf0b7 Inflammatory bowel disease  \n\uf0b7 Infections  \n\uf0b7 Ischemia  \n\uf0b7 Obstruction  \nHepatobiliary disorders  \n\uf0b7 Gallbladder disease  \n\uf0b7 Liver disease  \n\uf0b7 Pancreatitis  \nMalnutrition  \nCertificate of Added Qualifications Examination in Hospital Medicine  \n \nDisease and Disorder List  \n \n \nNeoplasms\/Malignancies  \n \nEndocrinology  \nAdrenal gland disease  \nDiabetes mellitus  \n\uf0b7 Diabetic ketoacidosis  \n\uf0b7 Hyperosmolar nonketotic coma  \n\uf0b7 Hypoglycemia\/hyperglycemia  \nNeoplasms\/Malignancies  \nThyroid\/parathyroid gland disease  \n \nNephrology\/Urology  \nAcid -base disorders  \nAcute kidney injury  \nChronic kidney disease\/End -stage renal disease  \nElectrolyte disorders  \n\uf0b7 Diabetes insipidus  \n\uf0b7 Syndrome of inappropriate antidiuretic hormone secretion (SIADH)  \nNeoplasms \/Malignancies  \nNephrolithiasis  \nUrinary tract infections  \n \nHematology\/Oncology  \nAnemias  \nBone marrow disorders  \nCoagulopathies  \nHematologic malignancies  \nHematologic\/oncologic emergencies  \nNeutropenic fever  \nSolid organ tumors  \n \nInfectious Diseases  \nFungal infections  \nHIV\/AIDS  \nHospital -acquired infections  \nInfection in immunocompromised host  \nSepsis syndrome  \nSkin and soft -tissue infections  \nTravel -related illnesses  \nViral infections  \n \nAllergy\/Immunology \/Rheumatology  \nAnaphylaxis  \nAutoimmune disorders  \nDrug reactions  \nInflammator y\/infectious arthropathy  \nCertificate of Added Qualifications Examination in Hospital Medicine  \n \nDisease and Disorder List  \n \n \nOrgan transplantations  \nSarcoidosis  \n \nNeurology  \nDelirium\/dementia  \nEncephalopathy  \nMeningitis\/Encephalitis  \nMyopathy  \nNeoplasm\/Malignancies  \nParaplegia\/Quadriplegia  \nPeripheral neuropathy  \nSeizure disorders  \nStroke  \n\uf0b7 Ischemic  \n\uf0b7 Hemorrhagic  \n \nPsychiatry  \nMood  disorders  \nPsychosis  \nSubstance use disorders  \nSuicide\/Overdose  \n \n \n \n \nHEALTH CARE  SYSTEMS:  \n \n1. Stewardship of resources  \n2. Co-management  \n3. Transitions in care  \n4. Quality\/Patient safety  \n5. Palliative care\/Pain management  \n6. Multimorbidity  \n7. Perioperative care  \n8. Drug safety  \n9. Documentation  \n10. Billing\/Coding  \n11. Ethical\/Legal  \n12. Preventative care  \n13. Procedures\n",
+                    "created_at": "2025-10-02 10:22:02"
+                },
+                {
+                    "id": "3",
+                    "transcription_id": "15",
+                    "member_id": "2",
+                    "patient_id": null,
+                    "mr_number": null,
+                    "document_type": "other",
+                    "original_filename": "Atrial Fibrillation.pdf",
+                    "stored_filename": "1759405666_Atrial_Fibrillation.pdf",
+                    "file_path": "\/var\/www\/html\/medicalnotes\/medicalvoice\/storage\/uploads\/documents\/1759405666_Atrial_Fibrillation.pdf",
+                    "file_type": "pdf",
+                    "file_size": "70287",
+                    "extracted_text": "Disease\n \nName:\n \nAtrial\n \nFibrillation\n \n(A-fib)\n \nDetails:\n \nDefinition:\n \nAtrial\n \nfibrillation\n \nis\n \na\n \ncommon\n \ntype\n \nof\n \narrhythmia,\n \nor\n \nirregular\n \nheartbeat.\n \nIn\n \nA-fib,\n \nthe\n \nupper\n \nchambers\n \nof\n \nthe\n \nheart\n \n(the\n \natria)\n \nbeat\n \nchaotically\n \nand\n \nirregularly,\n \nout\n \nof\n \nsync\n \nwith\n \nthe\n \nlower\n \nchambers\n \n(the\n \nventricles).\n \nThis\n \ndisorganized\n \nelectrical\n \nactivity\n \nleads\n \nto\n \na\n \nrapid\n \nand\n \nirregular\n \nheart\n \nrhythm.\n  \n \nHow\n \nit\n \nWorks:\n \nNormally,\n \nthe\n \nheart's\n \nnatural\n \npacemaker,\n \nthe\n \nsinoatrial\n \n(SA)\n \nnode\n \nlocated\n \nin\n \nthe\n \nright\n \natrium,\n \nsends\n \nout\n \nregular\n \nelectrical\n \nsignals\n \nthat\n \ncoordinate\n \nthe\n \ncontraction\n \nof\n \nthe\n \nheart\n \nchambers.\n \nIn\n \nA-fib,\n \nmultiple\n \nrapid\n \nand\n \ndisorganized\n \nelectrical\n \nsignals\n \nfire\n \nfrom\n \ndifferent\n \nareas\n \nin\n \nthe\n \natria.\n \nThese\n \nchaotic\n \nsignals\n \noverwhelm\n \nthe\n \nSA\n \nnode,\n \ncausing\n \nthe\n \natria\n \nto\n \nquiver\n \nor\n \nfibrill\n \ninstead\n \nof\n \ncontracting\n \neffectively.\n \nAs\n \na\n \nresult,\n \nthe\n \natria\n \ndon't\n \npump\n \nblood\n \nefficiently\n \ninto\n \nthe\n \nventricles.\n \nThe\n \nventricles\n \nthen\n \nbeat\n \nirregularly\n \nas\n \nthey\n \nrespond\n \nto\n \nthe\n \nerratic\n \nsignals\n \nfrom\n \nthe\n \natria.\n \nCauses\n \nand\n \nRisk\n \nFactors:\n \nA-fib\n \ncan\n \nbe\n \ncaused\n \nby\n \nor\n \nassociated\n \nwith\n \nvarious\n \nfactors,\n \nincluding:\n \n\u25cf\n \nHeart\n \nconditions:\n \n\u25cb\n \nHigh\n \nblood\n \npressure\n \n(hypertension)\n \n\u25cb\n \nCoronary\n \nartery\n \ndisease\n \n\u25cb\n \nHeart\n \nfailure\n \n\u25cb\n \nValvular\n \nheart\n \ndisease\n \n(e.g.,\n \nmitral\n \nstenosis,\n \nmitral\n \nregurgitation)\n \n\u25cb\n \nPericarditis\n \n\u25cb\n \nCongenital\n \nheart\n \ndefects\n \n\u25cb\n \nPrevious\n \nheart\n \nsurgery\n \n\u25cf\n \nOther\n \nmedical\n \nconditions:\n \n\u25cb\n \nThyroid\n \nproblems\n \n(especially\n \nhyperthyroidism)\n \n\u25cb\n \nChronic\n \nlung\n \ndisease\n \n(e.g.,\n \nCOPD,\n \npulmonary\n \nembolism)\n \n\u25cb\n \nDiabetes\n \n\u25cb\n \nObesity\n \n\u25cb\n \nSleep\n \napnea\n \n\u25cb\n \nChronic\n \nkidney\n \ndisease\n \n\u25cf\n \nLifestyle\n \nfactors:\n \n\u25cb\n \nExcessive\n \nalcohol\n \nconsumption\n \n(\"holiday\n \nheart\n \nsyndrome\")\n \n\u25cb\n \nStimulants\n \n(e.g.,\n \ncaffeine,\n \ncertain\n \nmedications)\n \n\u25cb\n \nStress\n \n\u25cf\n \nAge:\n \nThe\n \nrisk\n \nof\n \nA-fib\n \nincreases\n \nwith\n \nage.\n \n\u25cf\n \nGenetics:\n \nSome\n \npeople\n \nmay\n \nhave\n \na\n \ngenetic\n \npredisposition\n \nto\n \ndeveloping\n \nA-fib.\n \n\u25cf\n \nSometimes,\n \nthe\n \ncause\n \nof\n \nA-fib\n \nis\n \nunknown\n \n(idiopathic).\n \nSymptoms:\n \nSymptoms\n \nof\n \nA-fib\n \ncan\n \nvary\n \nwidely\n \nfrom\n \nperson\n \nto\n \nperson.\n \nSome\n \nindividuals\n \nmay\n \nexperience\n \nno\n \nsymptoms\n \nat\n \nall,\n \nwhile\n \nothers\n \nhave\n \nnoticeable\n \nand\n \nbothersome\n \nsymptoms.\n \nCommon\n \nsymptoms\n \ninclude:\n \n\u25cf\n \nPalpitations:\n \nA\n \nfluttering,\n \nracing,\n \npounding,\n \nor\n \nskipping\n \nsensation\n \nin\n \nthe\n \nchest.\n \n\u25cf\n \nShortness\n \nof\n \nbreath\n \n(dyspnea):\n \nEspecially\n \nduring\n \nexertion.\n \n\u25cf\n \nFatigue\n \nand\n \nweakness:\n \nFeeling\n \nunusually\n \ntired.\n \n\u25cf\n \nDizziness\n \nor\n \nlightheadedness:\n \nA\n \nfeeling\n \nof\n \nbeing\n \nunsteady\n \nor\n \nfaint.\n \n\u25cf\n \nChest\n \npain\n \nor\n \ndiscomfort:\n \nAlthough\n \nless\n \ncommon\n \nthan\n \nin\n \nother\n \nheart\n \nconditions.\n \n\u25cf\n \nReduced\n \nexercise\n \ntolerance:\n \nDifficulty\n \nperforming\n \nphysical\n \nactivities.\n \nComplications:\n \nA-fib\n \ncan\n \nlead\n \nto\n \nsignificant\n \ncomplications:\n \n\u25cf\n \nStroke:\n \nThis\n \nis\n \nthe\n \nmost\n \nserious\n \nrisk.\n \nThe\n \nirregular\n \nbeating\n \nof\n \nthe\n \natria\n \ncan\n \ncause\n \nblood\n \nto\n \npool\n \nand\n \nform\n \nclots.\n \nIf\n \na\n \nclot\n \ntravels\n \nfrom\n \nthe\n \nheart\n \nto\n \nthe\n \nbrain,\n \nit\n \ncan\n \nblock\n \nblood\n \nflow\n \nand\n \ncause\n \na\n \nstroke.\n \nIndividuals\n \nwith\n \nA-fib\n \nhave\n \na\n \nsignificantly\n \nincreased\n \nrisk\n \nof\n \nstroke.\n \n\u25cf\n \nHeart\n \nfailure:\n \nOver\n \ntime,\n \nthe\n \nrapid\n \nand\n \nirregular\n \nheart\n \nrhythm\n \ncan\n \nweaken\n \nthe\n \nheart\n \nmuscle,\n \nleading\n \nto\n \nheart\n \nfailure.\n \n\u25cf\n \nBlood\n \nclots\n \nin\n \nother\n \norgans:\n \nAlthough\n \nless\n \ncommon\n \nthan\n \nstroke,\n \nblood\n \nclots\n \ncan\n \ntravel\n \nto\n \nother\n \nparts\n \nof\n \nthe\n \nbody.\n \n\u25cf\n \nReduced\n \nquality\n \nof\n \nlife:\n \nSymptoms\n \nlike\n \nfatigue\n \nand\n \nshortness\n \nof\n \nbreath\n \ncan\n \nsignificantly\n \nimpact\n \ndaily\n \nactivities.\n \nDiagnosis:\n \nDiagnosis\n \nof\n \nA-fib\n \ntypically\n \ninvolves:\n \n\u25cf\n \nElectrocardiogram\n \n(ECG\n \nor\n \nEKG):\n \nThis\n \nis\n \nthe\n \nprimary\n \ndiagnostic\n \ntool.\n \nIt\n \nrecords\n \nthe\n \nelectrical\n \nactivity\n \nof\n \nthe\n \nheart\n \nand\n \ncan\n \nclearly\n \nshow\n \nthe\n \nirregular\n \nrhythm\n \nof\n \nA-fib.\n \n\u25cf\n \nHolter\n \nmonitor:\n \nA\n \nportable\n \nECG\n \ndevice\n \nworn\n \nfor\n \n24-48\n \nhours\n \n(or\n \nlonger)\n \nto\n \ncontinuously\n \nrecord\n \nthe\n \nheart's\n \nrhythm,\n \nespecially\n \nif\n \nA-fib\n \nepisodes\n \nare\n \ninfrequent.\n \n\u25cf\n \nEvent\n \nmonitor:\n \nA\n \ndevice\n \nworn\n \nfor\n \nseveral\n \nweeks\n \nthat\n \nthe\n \npatient\n \nactivates\n \nwhen\n \nthey\n \nfeel\n \nsymptoms.\n \n\u25cf\n \nEchocardiogram:\n \nAn\n \nultrasound\n \nof\n \nthe\n \nheart\n \nto\n \nassess\n \nits\n \nstructure\n \nand\n \nfunction\n \nand\n \nlook\n \nfor\n \nunderlying\n \nheart\n \nconditions.\n \n\u25cf\n \nBlood\n \ntests:\n \nTo\n \ncheck\n \nfor\n \nthyroid\n \nproblems,\n \nelectrolyte\n \nimbalances,\n \nand\n \nother\n \nconditions\n \nthat\n \nmight\n \ncontribute\n \nto\n \nA-fib.\n \n\u25cf\n \nSometimes,\n \nmore\n \ninvasive\n \ntests\n \nlike\n \nelectrophysiological\n \nstudies\n \n(EPS)\n \nmay\n \nbe\n \nneeded.\n",
+                    "created_at": "2025-10-02 11:47:46"
+                }
+            ],
+            "row_count": "24"
+        },
+        "medicalvoice_docs": {
+            "columns": [
+                {
+                    "field": "doc_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "original_filename",
+                    "type": "varchar(255)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "stored_filename",
+                    "type": "varchar(255)",
+                    "null": "NO",
+                    "key": "UNI",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_path",
+                    "type": "varchar(500)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_type",
+                    "type": "varchar(50)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "file_size",
+                    "type": "bigint",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "mime_type",
+                    "type": "varchar(100)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "upload_status",
+                    "type": "enum('uploading','uploaded','processing','processed','failed')",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "uploading",
+                    "extra": ""
+                },
+                {
+                    "field": "extracted_text",
+                    "type": "longtext",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "metadata",
+                    "type": "json",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "backup_path",
+                    "type": "varchar(500)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "checksum",
+                    "type": "varchar(64)",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "updated_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+                }
+            ],
+            "sample_data": [
+                {
+                    "doc_id": "1",
+                    "member_id": "1",
+                    "original_filename": "test_document.pdf",
+                    "stored_filename": "doc_test_1758880707.pdf",
+                    "file_path": "\/var\/www\/html\/medicalnotes2\/medicalvoice\/storage\/uploads\/documents\/doc_test_1758880707.pdf",
+                    "file_type": "pdf",
+                    "file_size": "1024",
+                    "mime_type": "application\/pdf",
+                    "upload_status": "uploaded",
+                    "extracted_text": null,
+                    "metadata": null,
+                    "backup_path": null,
+                    "checksum": null,
+                    "created_at": "2025-09-26 09:58:27",
+                    "updated_at": "2025-09-26 09:58:27"
+                },
+                {
+                    "doc_id": "2",
+                    "member_id": "1",
+                    "original_filename": "workflow_test_doc_1759143456.pdf",
+                    "stored_filename": "doc_68da66208b657_workflow_test_doc_1759143456.pdf",
+                    "file_path": "\/var\/www\/html\/medicalnotes2\/medicalvoice\/storage\/uploads\/documents\/2025\/09\/workflow_test_doc_1759143456.pdf",
+                    "file_type": "pdf",
+                    "file_size": "13",
+                    "mime_type": null,
+                    "upload_status": "uploaded",
+                    "extracted_text": null,
+                    "metadata": null,
+                    "backup_path": null,
+                    "checksum": "b7d61913805b4ce2aae6dba632f085f3",
+                    "created_at": "2025-09-29 10:57:36",
+                    "updated_at": "2025-09-29 10:57:36"
+                },
+                {
+                    "doc_id": "3",
+                    "member_id": "2",
+                    "original_filename": "report of errors in medicalnotes.txt",
+                    "stored_filename": "doc_68ddb02a0e7cf_1759359018.txt",
+                    "file_path": "\/var\/www\/html\/medicalnotes2\/medicalvoice\/storage\/uploads\/documents\/2025\/10\/doc_68ddb02a0dbef_1759359018_4866.txt",
+                    "file_type": "txt",
+                    "file_size": "1992",
+                    "mime_type": "text\/plain",
+                    "upload_status": "uploaded",
+                    "extracted_text": null,
+                    "metadata": "{\"upload_ip\": \"119.73.100.145\", \"user_agent\": \"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/139.0.0.0 Safari\/537.36\", \"upload_time\": \"2025-10-01 22:50:18\"}",
+                    "backup_path": "\/var\/www\/html\/medicalnotes2\/medicalvoice\/storage\/backup\/2025\/10\/backup_doc_68ddb02a0e7cf_1759359018.txt",
+                    "checksum": "3978647da8241ff62da3522f9272f73d45ad0a1e00de09c5dafcdca48fae623e",
+                    "created_at": "2025-10-01 22:50:18",
+                    "updated_at": "2025-10-01 22:50:18"
+                }
+            ],
+            "row_count": "7"
+        },
+        "medicalvoice_doc_associations": {
+            "columns": [
+                {
+                    "field": "association_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "transcription_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "doc_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "association_type",
+                    "type": "enum('primary','supplementary','reference')",
+                    "null": "YES",
+                    "key": "",
+                    "default": "supplementary",
+                    "extra": ""
+                },
+                {
+                    "field": "association_notes",
+                    "type": "text",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "relevance_score",
+                    "type": "decimal(3,2)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "created_by",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                }
+            ],
+            "sample_data": [
+                {
+                    "association_id": "4",
+                    "transcription_id": "31",
+                    "doc_id": "4",
+                    "association_type": "supplementary",
+                    "association_notes": null,
+                    "relevance_score": null,
+                    "created_at": "2025-10-01 23:03:27",
+                    "created_by": "2"
+                },
+                {
+                    "association_id": "5",
+                    "transcription_id": "35",
+                    "doc_id": "5",
+                    "association_type": "supplementary",
+                    "association_notes": null,
+                    "relevance_score": null,
+                    "created_at": "2025-10-01 23:15:19",
+                    "created_by": "2"
+                },
+                {
+                    "association_id": "6",
+                    "transcription_id": "2",
+                    "doc_id": "6",
+                    "association_type": "supplementary",
+                    "association_notes": null,
+                    "relevance_score": null,
+                    "created_at": "2025-10-02 09:13:10",
+                    "created_by": "2"
+                }
+            ],
+            "row_count": "4"
+        },
+        "medicalvoice_doc_tags": {
+            "columns": [
+                {
+                    "field": "tag_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "doc_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "tag_name",
+                    "type": "varchar(50)",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "tag_category",
+                    "type": "enum('medical','administrative','lab_result','imaging','prescription','referral','other')",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "other",
+                    "extra": ""
+                },
+                {
+                    "field": "confidence_score",
+                    "type": "decimal(3,2)",
+                    "null": "YES",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "created_by",
+                    "type": "int",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                }
+            ],
+            "sample_data": [],
+            "row_count": "0"
+        },
+        "fhir_audio": {
+            "columns": [
+                {
+                    "field": "id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "PRI",
+                    "default": null,
+                    "extra": "auto_increment"
+                },
+                {
+                    "field": "member_id",
+                    "type": "int",
+                    "null": "NO",
+                    "key": "MUL",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "audio_path",
+                    "type": "varchar(500)",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "extracted_text",
+                    "type": "longtext",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "fhir_json",
+                    "type": "longtext",
+                    "null": "NO",
+                    "key": "",
+                    "default": null,
+                    "extra": ""
+                },
+                {
+                    "field": "created_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "MUL",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED"
+                },
+                {
+                    "field": "updated_at",
+                    "type": "timestamp",
+                    "null": "YES",
+                    "key": "",
+                    "default": "CURRENT_TIMESTAMP",
+                    "extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+                }
+            ],
+            "sample_data": [
+                {
+                    "id": "1",
+                    "member_id": "2",
+                    "audio_path": "\/var\/www\/html\/medicalnotes\/medicalvoice\/storage\/uploads\/audio\/files\/audio1.mp3",
+                    "extracted_text": "Looking back, in hindsight... You know, in hindsight, this all makes some sense. But in hindsight, we should never let him move in. I'm sure. I bet you. And I bet you are very strong. I bet you don't remember when I did that. I'm talking too much. I am rambling. Sorry. I'm rambling. Would you stop rambling?\n",
+                    "fhir_json": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"document\",\n  \"entry\": [\n    {\n      \"resource\": {\n        \"resourceType\": \"DocumentReference\",\n        \"status\": \"final\",\n        \"type\": {\n          \"coding\": [\n            {\n              \"system\": \"http:\/\/loinc.org\",\n              \"code\": \"11506-3\",\n              \"display\": \"Progress note\"\n            }\n          ]\n        },\n        \"content\": [\n          {\n            \"attachment\": {\n              \"contentType\": \"text\/plain\",\n              \"data\": \"The provided transcription does not contain any medical information, symptoms, diagnoses, medications, or procedures. Therefore, no medical analysis, recommendations, risk assessment, or structured data extraction can be provided.\"\n            }\n          }\n        ]\n      }\n    }\n  ]\n}",
+                    "created_at": "2025-09-08 09:09:16",
+                    "updated_at": "2025-09-08 09:09:16"
+                },
+                {
+                    "id": "2",
+                    "member_id": "2",
+                    "audio_path": "\/var\/www\/html\/medicalnotes\/medicalvoice\/storage\/uploads\/audio\/files\/audio1.mp3",
+                    "extracted_text": "Looking back, in hindsight... You know, in hindsight, this all makes some sense. But in hindsight, we should never let him move in. I'm sure. I bet you. And I bet you are very strong. I bet you don't remember when I did that. I'm talking too much. I am rambling. Sorry. I'm rambling. Would you stop rambling?\n",
+                    "fhir_json": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"document\",\n  \"entry\": [\n    {\n      \"resource\": {\n        \"resourceType\": \"DocumentReference\",\n        \"status\": \"final\",\n        \"type\": {\n          \"coding\": [\n            {\n              \"system\": \"http:\/\/loinc.org\",\n              \"code\": \"11506-3\",\n              \"display\": \"Progress note\"\n            }\n          ]\n        },\n        \"content\": [\n          {\n            \"attachment\": {\n              \"contentType\": \"text\/plain\",\n              \"data\": \"The provided transcription does not contain any medical information, symptoms, diagnoses, medications, or procedures. It appears to be a personal conversation rather than a medical consultation. Therefore, no clinical summary, medical terminology, recommendations, risk assessment, or structured data can be provided.\"\n            }\n          }\n        ]\n      }\n    }\n  ]\n}",
+                    "created_at": "2025-09-08 09:11:46",
+                    "updated_at": "2025-09-08 09:11:46"
+                },
+                {
+                    "id": "3",
+                    "member_id": "2",
+                    "audio_path": "\/var\/www\/html\/medicalnotes\/medicalvoice\/storage\/uploads\/audio\/files\/recorded_audio_1757401007884.wav",
+                    "extracted_text": "Please give me the symptoms of heart disease.\n",
+                    "fhir_json": "{\n  \"resourceType\": \"Bundle\",\n  \"type\": \"document\",\n  \"entry\": [\n    {\n      \"resource\": {\n        \"resourceType\": \"DocumentReference\",\n        \"status\": \"final\",\n        \"type\": {\n          \"coding\": [\n            {\n              \"system\": \"http:\/\/loinc.org\",\n              \"code\": \"11506-3\",\n              \"display\": \"Progress note\"\n            }\n          ]\n        },\n        \"content\": [\n          {\n            \"attachment\": {\n              \"contentType\": \"text\/plain\",\n              \"data\": \"The request is for information on the symptoms of heart disease. Heart disease, also known as cardiovascular disease, refers to a range of conditions affecting the heart and blood vessels. Symptoms can vary depending on the specific type of heart disease but may include:\\n\\n1. Chest pain or discomfort (angina)\\n2. Shortness of breath\\n3. Dizziness or fainting spells\\n4. Fatigue\\n5. Swelling in the legs, ankles, and feet (edema)\\n6. Irregular heartbeat (arrhythmia)\\n7. Rapid or fluttering heartbeat (palpitations)\\n\\nMEDICAL TERMINOLOGY:\\n\\n1. Angina: Chest pain or discomfort due to coronary heart disease. It occurs when the heart muscle doesn't get as much blood as it needs.\\n2. Edema: Swelling caused by excess fluid trapped in the body's tissues.\\n3. Arrhythmia: Irregular heartbeat, which can lead to a variety of complications, including stroke and heart failure.\\n4. Palpitations: Unusually or abnormally rapid or violent beating of the heart.\\n\\nRECOMMENDATIONS:\\n\\nIf any of these symptoms are experience...\"\n            }\n          }\n        ]\n      }\n    }\n  ]\n}",
+                    "created_at": "2025-09-09 06:57:08",
+                    "updated_at": "2025-09-09 06:57:08"
+                }
+            ],
+            "row_count": "68"
+        }
+    },
+    "relationships": [
+        {
+            "TABLE_NAME": "api_usage",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "api_usage_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "audio_transcriptions",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "audio_transcriptions_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "audio_transcriptions",
+            "COLUMN_NAME": "patient_id",
+            "CONSTRAINT_NAME": "fk_audio_patient",
+            "REFERENCED_TABLE_NAME": "patients",
+            "REFERENCED_COLUMN_NAME": "patient_id"
+        },
+        {
+            "TABLE_NAME": "credit_transactions",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "credit_transactions_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "doc_processing_queue",
+            "COLUMN_NAME": "doc_id",
+            "CONSTRAINT_NAME": "doc_processing_queue_ibfk_1",
+            "REFERENCED_TABLE_NAME": "medicalvoice_docs",
+            "REFERENCED_COLUMN_NAME": "doc_id"
+        },
+        {
+            "TABLE_NAME": "fhir_audio",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "fhir_audio_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "fhir_documents",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "fhir_documents_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_combined_reports",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "medicalvoice_combined_reports_ibfk_2",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_combined_reports",
+            "COLUMN_NAME": "transcription_id",
+            "CONSTRAINT_NAME": "medicalvoice_combined_reports_ibfk_1",
+            "REFERENCED_TABLE_NAME": "audio_transcriptions",
+            "REFERENCED_COLUMN_NAME": "id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_doc_access_log",
+            "COLUMN_NAME": "doc_id",
+            "CONSTRAINT_NAME": "medicalvoice_doc_access_log_ibfk_1",
+            "REFERENCED_TABLE_NAME": "medicalvoice_docs",
+            "REFERENCED_COLUMN_NAME": "doc_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_doc_access_log",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "medicalvoice_doc_access_log_ibfk_2",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_doc_associations",
+            "COLUMN_NAME": "created_by",
+            "CONSTRAINT_NAME": "medicalvoice_doc_associations_ibfk_3",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_doc_associations",
+            "COLUMN_NAME": "doc_id",
+            "CONSTRAINT_NAME": "medicalvoice_doc_associations_ibfk_2",
+            "REFERENCED_TABLE_NAME": "medicalvoice_docs",
+            "REFERENCED_COLUMN_NAME": "doc_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_doc_associations",
+            "COLUMN_NAME": "transcription_id",
+            "CONSTRAINT_NAME": "medicalvoice_doc_associations_ibfk_1",
+            "REFERENCED_TABLE_NAME": "medicalvoice_transcriptions",
+            "REFERENCED_COLUMN_NAME": "transcription_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_doc_tags",
+            "COLUMN_NAME": "created_by",
+            "CONSTRAINT_NAME": "medicalvoice_doc_tags_ibfk_2",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_doc_tags",
+            "COLUMN_NAME": "doc_id",
+            "CONSTRAINT_NAME": "medicalvoice_doc_tags_ibfk_1",
+            "REFERENCED_TABLE_NAME": "medicalvoice_docs",
+            "REFERENCED_COLUMN_NAME": "doc_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_docs",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "medicalvoice_docs_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_transcriptions",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "medicalvoice_transcriptions_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "medicalvoice_transcriptions",
+            "COLUMN_NAME": "patient_id",
+            "CONSTRAINT_NAME": "fk_transcription_patient",
+            "REFERENCED_TABLE_NAME": "patients",
+            "REFERENCED_COLUMN_NAME": "patient_id"
+        },
+        {
+            "TABLE_NAME": "password_reset_tokens",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "password_reset_tokens_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "patient_access_log",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "patient_access_log_ibfk_2",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "patient_access_log",
+            "COLUMN_NAME": "patient_id",
+            "CONSTRAINT_NAME": "patient_access_log_ibfk_1",
+            "REFERENCED_TABLE_NAME": "patients",
+            "REFERENCED_COLUMN_NAME": "patient_id"
+        },
+        {
+            "TABLE_NAME": "patient_documents",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "patient_documents_ibfk_2",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "patient_documents",
+            "COLUMN_NAME": "patient_id",
+            "CONSTRAINT_NAME": "patient_documents_ibfk_1",
+            "REFERENCED_TABLE_NAME": "patients",
+            "REFERENCED_COLUMN_NAME": "patient_id"
+        },
+        {
+            "TABLE_NAME": "patient_documents",
+            "COLUMN_NAME": "transcription_id",
+            "CONSTRAINT_NAME": "patient_documents_ibfk_3",
+            "REFERENCED_TABLE_NAME": "audio_transcriptions",
+            "REFERENCED_COLUMN_NAME": "id"
+        },
+        {
+            "TABLE_NAME": "patient_medical_history",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "patient_medical_history_ibfk_2",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "patient_medical_history",
+            "COLUMN_NAME": "patient_id",
+            "CONSTRAINT_NAME": "patient_medical_history_ibfk_1",
+            "REFERENCED_TABLE_NAME": "patients",
+            "REFERENCED_COLUMN_NAME": "patient_id"
+        },
+        {
+            "TABLE_NAME": "patient_medical_history",
+            "COLUMN_NAME": "source_document_id",
+            "CONSTRAINT_NAME": "patient_medical_history_ibfk_4",
+            "REFERENCED_TABLE_NAME": "patient_documents",
+            "REFERENCED_COLUMN_NAME": "document_id"
+        },
+        {
+            "TABLE_NAME": "patient_medical_history",
+            "COLUMN_NAME": "source_transcription_id",
+            "CONSTRAINT_NAME": "patient_medical_history_ibfk_3",
+            "REFERENCED_TABLE_NAME": "audio_transcriptions",
+            "REFERENCED_COLUMN_NAME": "id"
+        },
+        {
+            "TABLE_NAME": "patient_reports",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "patient_reports_ibfk_2",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "patient_reports",
+            "COLUMN_NAME": "patient_id",
+            "CONSTRAINT_NAME": "patient_reports_ibfk_1",
+            "REFERENCED_TABLE_NAME": "patients",
+            "REFERENCED_COLUMN_NAME": "patient_id"
+        },
+        {
+            "TABLE_NAME": "patient_visits",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "patient_visits_ibfk_2",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "patient_visits",
+            "COLUMN_NAME": "patient_id",
+            "CONSTRAINT_NAME": "patient_visits_ibfk_1",
+            "REFERENCED_TABLE_NAME": "patients",
+            "REFERENCED_COLUMN_NAME": "patient_id"
+        },
+        {
+            "TABLE_NAME": "patients",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "patients_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "payment_history",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "payment_history_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "processing_logs",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "processing_logs_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        },
+        {
+            "TABLE_NAME": "transcription_documents",
+            "COLUMN_NAME": "patient_id",
+            "CONSTRAINT_NAME": "fk_transcription_documents_patient",
+            "REFERENCED_TABLE_NAME": "patients",
+            "REFERENCED_COLUMN_NAME": "patient_id"
+        },
+        {
+            "TABLE_NAME": "user_sessions",
+            "COLUMN_NAME": "member_id",
+            "CONSTRAINT_NAME": "user_sessions_ibfk_1",
+            "REFERENCED_TABLE_NAME": "members",
+            "REFERENCED_COLUMN_NAME": "member_id"
+        }
+    ],
+    "timestamp": "2025-10-08 09:20:06"
+}

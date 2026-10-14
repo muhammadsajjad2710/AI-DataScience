@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Doctor Dashboard</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="card" style="flex:2">
+        <h2>Record or Upload Audio</h2>
+        <div class="spacer"></div>
+        <div class="row">
+          <button id="record-btn">Start Recording</button>
+          <button id="stop-btn" class="secondary" disabled>Stop</button>
+          <button id="submit-btn" class="secondary" disabled>Submit</button>
+          <button id="cancel-btn" class="secondary" disabled>Cancel</button>
+          <input type="file" id="file-input" accept="audio/*"/>
+          <button id="upload-btn">Upload</button>
+        </div>
+        <div class="spacer"></div>
+        <audio id="preview" controls class="hidden"></audio>
+        <div id="recording-status" class="muted"></div>
+        <div id="status" class="muted"></div>
+      </div>
+      <div class="card" style="flex:1">
+        <h2>Latest Result</h2>
+        <div id="result" class="note"></div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="card">
+      <div class="row">
+        <h2 style="flex:1">Your Notes</h2>
+        <a href="notes.html"><button class="secondary">Open Notes</button></a>
+      </div>
+      <div class="spacer"></div>
+      <div id="notes" class="notes-grid"></div>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
+
+

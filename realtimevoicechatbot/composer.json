@@ -1,0 +1,29 @@
+﻿{
+  "name": "realtimevoicechatbot/app",
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^10.5"
+  },
+  "autoload": {
+    "files": [
+      "backend/db.php",
+      "backend/openai.php",
+      "backend/google_stt.php"
+    ]
+  }
+}
+{
+  "name": "realtimevoicechatbot/app",
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^10.5"
+  },
+  "autoload": {
+    "files": [
+      "backend/db.php",
+      "backend/openai.php",
+      "backend/google_stt.php"
+    ]
+  }
+}
+{" name\:\realtimevoicechatbot/app\,\require\:{}}

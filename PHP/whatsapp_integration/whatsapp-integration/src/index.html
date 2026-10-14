@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send WhatsApp Message</title>
+</head>
+<body>
+    <h2>Send WhatsApp Message</h2>
+
+    <form id="whatsappForm" action="sendMessage.php" method="POST">
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" required>
+        <br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <br>
+        
+        <button type="submit">Send</button>
+    </form>
+
+    <div id="responseMessage" style="margin-top: 10px; font-weight: bold;"></div>
+
+<script>
+document.getElementById("whatsappForm").onsubmit = async function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.status === "success") {
+            document.getElementById("responseMessage").innerHTML = "✅ Message sent successfully!";
+        } else {
+            document.getElementById("responseMessage").innerHTML = "❌ Failed to send message: " + JSON.stringify(result);
+        }
+    } catch (error) {
+        document.getElementById("responseMessage").innerHTML = "❌ Error: " + error.message;
+    }
+};
+
+</script>
+</body>
+</html>

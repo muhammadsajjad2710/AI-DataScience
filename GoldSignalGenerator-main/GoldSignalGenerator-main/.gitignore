@@ -1,0 +1,7 @@
+.venv
+venv
+Research/
+Artifacts
+Artifacts*
+Artifacts/
+.env

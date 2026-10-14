@@ -1,0 +1,58 @@
+ID,Filename,Content,"Processed At"
+1,Recommendation_computerfundamentals1.docx,,"2025-03-06 07:29:47"
+2,Recommendation_computerfundamentals1.docx,,"2025-03-06 07:45:16"
+3,Recommendation_computerfundamentals1.docx,,"2025-03-06 07:53:04"
+4,"Timeline of employment Sajjad.docx",,"2025-03-06 07:53:53"
+5,"Timeline of employment Sajjad.docx",,"2025-03-06 08:02:32"
+6,"Timeline of employment Sajjad.docx",,"2025-03-06 08:03:43"
+7,"Timeline of employment Sajjad.docx",,"2025-03-06 08:03:49"
+8,"Timeline of employment Sajjad.docx",,"2025-03-06 08:04:01"
+9,"Timeline of employment Sajjad.docx",,"2025-03-06 10:49:01"
+10,"Timeline of employment Sajjad.docx",,"2025-03-06 10:51:48"
+11,"Timeline of employment Sajjad.docx",,"2025-03-10 13:05:45"
+12,processed_report_20250310_090548.csv,"ID,Filename,Content,""Processed At""
+1,Recommendation_computerfundamentals1.docx,,""2025-03-06 07:29:47""
+2,Recommendation_computerfundamentals1.docx,,""2025-03-06 07:45:16""
+3,Recommendation_computerfundamentals1.docx,,""2025-03-06 07:53:04""
+4,""Timeline of employment Sajjad.docx"",,""2025-03-06 07:53:53""
+5,""Timeline of employment Sajjad.docx"",,""2025-03-06 08:02:32""
+6,""Timeline of employment Sajjad.docx"",,""2025-03-06 08:03:43""
+7,""Timeline of employment Sajjad.docx"",,""2025-03-06 08:03:49""
+8,""Timeline of employment Sajjad.docx"",,""2025-03-06 08:04:01""
+9,""Timeline of employment Sajjad.docx"",,""2025-03-06 10:49:01""
+10,""Timeline of employment Sajjad.docx"",,""2025-03-06 10:51:48""
+11,""Timeline of employment Sajjad.docx"",,""2025-03-10 13:05:45""
+","2025-03-10 16:21:28"
+13,testing.txt,"For Reflection/Journaling:
+
+""The quiet moments between breaths hold the most profound truths. It's in the stillness that the chaos of the day resolves itself, and the seeds of tomorrow's clarity are sown.""
+""What if we treated each day as a blank page, an opportunity to write a story of kindness, resilience, and growth? The ink may smudge, but the narrative is ours to shape.""
+""The journey is not about reaching a destination, but about the lessons learned along the way. Each stumble, each triumph, a thread woven into the tapestry of our experience.""","2025-03-10 16:25:39"
+14,testing.txt,"For Reflection/Journaling:
+
+""The quiet moments between breaths hold the most profound truths. It's in the stillness that the chaos of the day resolves itself, and the seeds of tomorrow's clarity are sown.""
+""What if we treated each day as a blank page, an opportunity to write a story of kindness, resilience, and growth? The ink may smudge, but the narrative is ours to shape.""
+""The journey is not about reaching a destination, but about the lessons learned along the way. Each stumble, each triumph, a thread woven into the tapestry of our experience.""","2025-03-10 17:34:30"
+15,testing.txt,"For Reflection/Journaling:
+
+""The quiet moments between breaths hold the most profound truths. It's in the stillness that the chaos of the day resolves itself, and the seeds of tomorrow's clarity are sown.""
+""What if we treated each day as a blank page, an opportunity to write a story of kindness, resilience, and growth? The ink may smudge, but the narrative is ours to shape.""
+""The journey is not about reaching a destination, but about the lessons learned along the way. Each stumble, each triumph, a thread woven into the tapestry of our experience.""","2025-03-10 17:39:25"
+16,testing.txt,"For Reflection/Journaling:
+
+""The quiet moments between breaths hold the most profound truths. It's in the stillness that the chaos of the day resolves itself, and the seeds of tomorrow's clarity are sown.""
+""What if we treated each day as a blank page, an opportunity to write a story of kindness, resilience, and growth? The ink may smudge, but the narrative is ours to shape.""
+""The journey is not about reaching a destination, but about the lessons learned along the way. Each stumble, each triumph, a thread woven into the tapestry of our experience.""","2025-03-11 12:58:07"
+17,test1.txt,"A Short and Meaningful Option
+
+Find beauty in the ordinary, and strength in the quiet moments.","2025-03-11 13:06:13"
+18,test2.txt.txt,"he what is this","2025-03-11 13:07:52"
+19,test2.txt.txt,"he what is this","2025-03-11 13:07:53"
+20,output.json,"{
+    ""transcribed_text"": ""The way education works today is really much like vaudeville. You know, before there was radio and TV and movies, you had vaudeville where every town would have their town play, the town troupe, the sort of acting troupe that would be the entertainment. But then along came movies and TV and video games where you take the smartest, best people in any arena, like whether they're acting, writing, directing, speaking, special effects. You spend tens of millions, sometimes hundreds of millions of dollars creating a great movie or a great video game and you make it as compelling as possible. Now that crushes. Vaudeville crushes. So what you actually want to have is an interactive learning experience that is as compelling as possible. And you don't actually want a teacher in front of a board doing a vaudeville act. Education system is still stuck in the 19th century while the world has moved on to the 21st. We need to innovate education to match the pace of technological advancement."",
+    ""chatgpt_response"": ""Absolutely, the point you have raised is quite significant. As the world moves towards a more technology-centric era, the educational system should also evolve. Online learning systems, interactive modules, game-based learning, virtual reality experiences can all provide more engaging and effective avenues for education compared to traditional lecturing methods. The increased use of digital platforms could lead to a much more personalized, adaptive, and immersive learning experience, much like what we observe in high-quality movies or video games. This could potentially revolutionize the education system, making it more suited to the needs and interests of individual students, fostering stronger learning outcomes, and preparing students for a rapidly advancing 21st-century world.""
+}","2025-03-11 13:28:16"
+21,output.json,"{
+    ""transcribed_text"": ""The way education works today is really much like vaudeville. You know, before there was radio and TV and movies, you had vaudeville where every town would have their town play, the town troupe, the sort of acting troupe that would be the entertainment. But then along came movies and TV and video games where you take the smartest, best people in any arena, like whether they're acting, writing, directing, speaking, special effects. You spend tens of millions, sometimes hundreds of millions of dollars creating a great movie or a great video game and you make it as compelling as possible. Now that crushes. Vaudeville crushes. So what you actually want to have is an interactive learning experience that is as compelling as possible. And you don't actually want a teacher in front of a board doing a vaudeville act. Education system is still stuck in the 19th century while the world has moved on to the 21st. We need to innovate education to match the pace of technological advancement."",
+    ""chatgpt_response"": ""Absolutely, the point you have raised is quite significant. As the world moves towards a more technology-centric era, the educational system should also evolve. Online learning systems, interactive modules, game-based learning, virtual reality experiences can all provide more engaging and effective avenues for education compared to traditional lecturing methods. The increased use of digital platforms could lead to a much more personalized, adaptive, and immersive learning experience, much like what we observe in high-quality movies or video games. This could potentially revolutionize the education system, making it more suited to the needs and interests of individual students, fostering stronger learning outcomes, and preparing students for a rapidly advancing 21st-century world.""
+}","2025-03-11 13:28:18"

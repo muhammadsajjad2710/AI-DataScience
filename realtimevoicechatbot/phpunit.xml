@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="vendor/autoload.php" colors="true">
+  <testsuites>
+    <testsuite name="App Tests">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="TEST_MODE" value="1"/>
+    <env name="DB_DSN" value="sqlite::memory:"/>
+    <env name="DB_USER" value=""/>
+    <env name="DB_PASS" value=""/>
+  </php>
+</phpunit>
+

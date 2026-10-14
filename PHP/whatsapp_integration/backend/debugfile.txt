@@ -1,0 +1,16 @@
+JSON received and converted to PHP array:  NULL 
+whatsapp id:   timestamp:  and  and  and message type:  and media id if present:  and status:  
+verification parameters:     
+JSON received and converted to PHP array:  NULL 
+whatsapp id:   timestamp:  and  and  and message type:  and media id if present:  and status:  
+verification parameters:     
+JSON received and converted to PHP array:  NULL 
+whatsapp id:   timestamp:  and  and  and message type:  and media id if present:  and status:  
+verification parameters:     
+[2025-02-28 04:52:09] Script execution started
+[2025-02-28 04:52:09] Raw JSON received: 
+[2025-02-28 04:52:09] Error: JSON decoding failed.
+[2025-02-28 05:10:20] Script execution started
+[2025-02-28 05:10:20] Verification parameters received: Mode=, Challenge=, Token=
+[2025-02-28 05:10:20] Raw JSON received: 
+[2025-02-28 05:10:20] Error: JSON decoding failed.

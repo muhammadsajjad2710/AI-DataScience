@@ -1,0 +1,132 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+Units Details Template
+{% endblock page_title %}
+
+{% block main_content %}
+
+{% load static %}
+
+<section class="content">
+    <div class="container-fluid">
+
+        <!-- Dropdowns for filtering -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="contract-filter">Filter by Contract ID:</label>
+                    <select id="contract-filter" class="form-control">
+                        <option value="">Select Contract ID</option>
+                        {% for contract_id in contract_ids %}
+                            <option value="{{ contract_id }}">{{ contract_id }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="statement-filter">Filter by Statement Reference:</label>
+                    <select id="statement-filter" class="form-control">
+                        <option value="">Select Statement Reference</option>
+                        {% for statement_ref in statement_references %}
+                            <option value="{{ statement_ref }}">{{ statement_ref }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group mt-4">
+                    <button id="fetch-data-btn" class="btn btn-primary">Fetch Data</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Table to display Units Details -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Units of Dental Activity per Performer Details</h3>
+                    </div>
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Contract ID</th>
+                                    <th>Statement Reference</th>
+                                    <th>Performer ID</th>
+                                    <th>Name</th>
+                                    <th>Current Financial Year</th>
+                                    <th>Current Financial Year Amount</th>
+                                    <th>Last Financial Year</th>
+                                    <th>Last Financial Year Amount</th>
+                                    <th>Other Financial Years</th>
+                                    <th>Other Financial Year Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="units-table-body">
+                                <!-- Table rows will be dynamically populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /.container-fluid -->
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contractFilter = document.getElementById('contract-filter');
+        const statementFilter = document.getElementById('statement-filter');
+        const fetchDataButton = document.getElementById('fetch-data-btn');
+        const unitsTableBody = document.getElementById('units-table-body');
+    
+        // Function to fetch and display rows based on selected filters
+        function fetchAndDisplayRows() {
+            const contractId = contractFilter.value;
+            const statementRef = statementFilter.value;
+    
+            // Clear existing table rows
+            unitsTableBody.innerHTML = '';
+    
+            // Fetch data based on selected filters
+            fetch(`/units_details_api/?contract_id=${contractId}&statement_reference=${statementRef}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Iterate over fetched data and generate HTML rows
+                    data.forEach(unit => {
+                        const row = `
+                            <tr>
+                                <td>${unit.id}</td>
+                                <td>${unit.Contract_ID}</td>
+                                <td>${unit.Statement_Reference}</td>
+                                <td>${unit.Performer_ID}</td>
+                                <td>${unit.Name}</td>
+                                <td>${unit.Current_Financial_Year}</td>
+                                <td>${unit.Current_Financial_Year_Amount}</td>
+                                <td>${unit.Last_Financial_Year}</td>
+                                <td>${unit.Last_Financial_Year_Amount}</td>
+                                <td>${unit.Other_Finacial_Years}</td>
+                                <td>${unit.Other_Finacial_Year_Amount}</td>
+                            </tr>
+                        `;
+                        unitsTableBody.insertAdjacentHTML('beforeend', row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching units data:', error);
+                });
+        }
+    
+        // Attach click event listener to the Fetch Data button
+        fetchDataButton.addEventListener('click', fetchAndDisplayRows);
+    });
+    </script>
+    
+
+
+{% endblock main_content %}

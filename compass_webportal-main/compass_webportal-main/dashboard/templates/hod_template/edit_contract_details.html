@@ -1,0 +1,63 @@
+{% extends 'hod_template/base_template.html' %}
+
+{% block page_title %}
+Edit Contract
+{% endblock page_title %}
+
+{% block main_content %}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Edit Contract</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form role="form" method="post">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="Contract_ID">Contract ID</label>
+                                <input type="text" class="form-control" id="Contract_ID" name="Contract_ID" value="{{ contract.Contract_ID }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="Contract_UDAs">Contract UDAs</label>
+                                <input type="text" class="form-control" id="Contract_UDAs" name="Contract_UDAs" value="{{ contract.Contract_UDAs }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="Commissioner">Commissioner</label>
+                                <input type="text" class="form-control" id="Commissioner" name="Commissioner" value="{{ contract.Commissioner }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="ContractType">Contract Type</label>
+                                <input type="text" class="form-control" id="ContractType" name="ContractType" value="{{ contract.ContractType }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="Start_Date">Start Date</label>
+                                <input type="date" class="form-control" id="Start_Date" name="Start_Date" value="{{ contract.Start_Date }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="End_Date">End Date</label>
+                                <input type="date" class="form-control" id="End_Date" name="End_Date" value="{{ contract.End_Date }}">
+                            </div>
+                            <div class="form-group">
+                                <label for="Status">Status</label>
+                                <input type="text" class="form-control" id="Status" name="Status" value="{{ contract.Status }}">
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+{% endblock main_content %}

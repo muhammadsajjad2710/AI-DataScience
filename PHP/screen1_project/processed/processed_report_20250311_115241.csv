@@ -1,0 +1,18 @@
+"General Report"
+
+"Step 1: Upload File"
+"File Uploaded Successfully: test2.txt.txt"
+
+"Step 2: Normalize Data"
+"Data normalization and cleaning has been successfully completed."
+"Preview of Normalized Data:"
+id,filename,content,processed_at
+29,test2.txt.txt,"he what is this","2025-03-11 15:52:37"
+
+"Step 3: Integrate Data into MySQL"
+"Data has been successfully added to the database."
+"Clean and prepared data is stored in the database."
+
+"Step 4: Generate Report"
+"This report includes all details of the processing steps performed."
+"The user can download this report for documentation and reference."
